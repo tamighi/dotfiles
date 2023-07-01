@@ -1,0 +1,23 @@
+{
+  "name": "My-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": ["typescript", "typescriptreact"],
+        "path": "./javascript.json"
+      },
+      {
+        "language": ["typescriptreact"],
+        "path": "./react.json"
+      },
+      {
+        "language": ["css"],
+        "path": "./css.json"
+      },
+      {
+        "language": ["gitcommit"],
+        "path": "./gitcommit.json"
+      }
+    ]
+  }
+}

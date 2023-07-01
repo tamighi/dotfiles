@@ -1,7 +1,8 @@
 local status, api = pcall(require, "nvim-tree.api")
 if (not status) then return end
+local tree = require("nvim-tree")
 
-api.setup({
+tree.setup({
   hijack_netrw = false,
   git = {
     enable = false,

@@ -1,6 +1,7 @@
-local api = require("nvim-tree.api")
+local status, api = require("nvim-tree.api")
+if (not status) then return end
 
-require("nvim-tree").setup({
+api.setup({
   hijack_netrw = false,
   git = {
     enable = false,

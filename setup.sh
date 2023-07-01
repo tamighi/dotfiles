@@ -5,13 +5,13 @@ font=false
 usage() {
   echo "Usage: ./setup [-i] [-c] [-s]"
   echo "Options:"
-  echo "  -c    for fonts"
+  echo "  -f    for fonts"
   exit 1
 }
 
 while getopts "ics" opt; do
   case $opt in
-    c)
+    f)
       font=true
       ;;
     *)
@@ -26,9 +26,9 @@ sudo apt install curl git
 ## Fonts
 if $font; then
   wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip 
-  mkdir -p ${HOME}/.local/share/fonts/JetBrainsMono
-  unzip JetBrainsMono.zip -d ~/.local/share/fonts/JetBrainsMono
-  rm JetBrainsMono.zip
+  mkdir -p ${HOME}/.local/share/fonts/DejaVuSansMono
+  unzip DejaVuSansMono.zip -d ~/.local/share/fonts/DejaVuSansMono
+  rm DejaVuSansMono.zip
   fc-cache -f -v
 fi
 

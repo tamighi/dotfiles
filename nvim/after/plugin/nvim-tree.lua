@@ -1,4 +1,4 @@
-local status, api = require("nvim-tree.api")
+local status, api = pcall(require, "nvim-tree.api")
 if (not status) then return end
 
 api.setup({

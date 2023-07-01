@@ -3,13 +3,13 @@
 font=false
 
 usage() {
-  echo "Usage: ./setup [-i] [-c] [-s]"
+  echo "Usage: ./setup [-f]"
   echo "Options:"
   echo "  -f    for fonts"
   exit 1
 }
 
-while getopts "ics" opt; do
+while getopts "f" opt; do
   case $opt in
     f)
       font=true

@@ -5,6 +5,8 @@ sudo snap install nvim --classic
 ln -sn ${HOME}/dotfiles/nvim ${HOME}/.config/nvim
 ## Configure Packer
 ### setup packer
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 ### install npm for Mason
 sudo apt install curl

@@ -1,4 +1,15 @@
-vim.cmd([[packadd packer.nvim]])
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
   -- Packer
@@ -28,9 +39,9 @@ return require("packer").startup(function(use)
   }
 
   -- Autocomplete
-  use("hrsh7th/nvim-cmp") -- Completion
-  use("hrsh7th/cmp-buffer") -- Buffer completion
-  use("hrsh7th/cmp-path") -- Path completion
+  use("hrsh7th/nvim-cmp")     -- Completion
+  use("hrsh7th/cmp-buffer")   -- Buffer completion
+  use("hrsh7th/cmp-path")     -- Path completion
   use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in LSP
   use("hrsh7th/cmp-nvim-lua") -- for vim global in lua
   use("onsails/lspkind-nvim") -- Icons
@@ -40,8 +51,8 @@ return require("packer").startup(function(use)
   use("williamboman/mason-lspconfig.nvim")
 
   -- Autocomplete snippets
-  use("L3MON4D3/LuaSnip") -- Snippet plugin
-  use("saadparwaiz1/cmp_luasnip") -- Add luasnip to cmp
+  use("L3MON4D3/LuaSnip")             -- Snippet plugin
+  use("saadparwaiz1/cmp_luasnip")     -- Add luasnip to cmp
   use("rafamadriz/friendly-snippets") -- Snippet package
 
   -- Telescope (Fuzzy finder)
@@ -51,9 +62,9 @@ return require("packer").startup(function(use)
     requires = { { "nvim-lua/plenary.nvim" } },
   })
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- Optimizer
-  use("nvim-telescope/telescope-file-browser.nvim") -- file browser
-  use("nvim-tree/nvim-web-devicons") -- Icons
-  use("nvim-tree/nvim-tree.lua") -- Tree for a better global view
+  use("nvim-telescope/telescope-file-browser.nvim")                 -- file browser
+  use("nvim-tree/nvim-web-devicons")                                -- Icons
+  use("nvim-tree/nvim-tree.lua")                                    -- Tree for a better global view
 
   -- Syntax highlighting
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
@@ -82,4 +93,8 @@ return require("packer").startup(function(use)
 
   -- Harpoon
   use("ThePrimeagen/harpoon")
+
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)

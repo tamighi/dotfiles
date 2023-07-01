@@ -1,4 +1,5 @@
-local ls = require('luasnip')
+local status, ls = pcall(require, 'luasnip')
+if (not status) then return end
 
 -- JSON snippets
 -- TODO: JSON to lua

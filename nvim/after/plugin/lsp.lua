@@ -1,4 +1,5 @@
-local lspconfig = require('lspconfig')
+local status, lspconfig = pcall(require, 'lspconfig')
+if (not status) then return end
 local cmp_lsp = require('cmp_nvim_lsp')
 local typescript = require('typescript')
 

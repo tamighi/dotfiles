@@ -1,4 +1,5 @@
-local cmp = require('cmp')
+local status, cmp = pcall(require, 'cmp')
+if (not status) then return end
 local luasnip = require('luasnip')
 local lspkind = require('lspkind')
 
@@ -15,7 +16,7 @@ cmp.setup({
     { name = 'nvim_lua' },
     { name = 'luasnip' },
     { name = 'path' },
-    { name = 'buffer', keyword_length = 3 },
+    { name = 'buffer',  keyword_length = 3 },
   }),
   -- Keymaps
   mapping = cmp.mapping.preset.insert({

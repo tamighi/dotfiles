@@ -30,13 +30,6 @@ return require("packer").startup(function(use)
   -- LSP
   use("neovim/nvim-lspconfig")
   use("jose-elias-alvarez/typescript.nvim") -- LSP utils for typescript
-  use {
-    'akinsho/flutter-tools.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim', -- optional for vim.ui.select
-    },
-  }
 
   -- Autocomplete
   use("hrsh7th/nvim-cmp")     -- Completion

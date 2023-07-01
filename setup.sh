@@ -21,15 +21,23 @@ while getopts "f" opt; do
 done
 
 # GENERAL
+sudo apt update
 sudo apt install curl git
 
 ## Fonts
 if $font; then
-  wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip 
-  mkdir -p ${HOME}/.local/share/fonts/DejaVuSansMono
-  unzip DejaVuSansMono.zip -d ~/.local/share/fonts/DejaVuSansMono
-  rm DejaVuSansMono.zip
-  fc-cache -f -v
+  if [ -d "${HOME}/.local/share/fonts/DejaVuSansMono" ]; then
+    echo "Font already installed."
+    exit 1
+  else
+    mkdir -p ${HOME}/.local/share/fonts/DejaVuSansMono
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip 
+    echo "Unziping fonts ..."
+    unzip DejaVuSansMono.zip -d ~/.local/share/fonts/DejaVuSansMono > /dev/null 2>&1
+    rm DejaVuSansMono.zip
+    echo "Running fc-cache -f -v ..."
+    fc-cache -f -v > /dev/null 2>&1
+  fi
 fi
 
 # NVIM

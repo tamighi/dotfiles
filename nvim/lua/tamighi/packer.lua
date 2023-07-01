@@ -64,7 +64,7 @@ return require("packer").startup(function(use)
 
   -- Pairs/tags
   use("windwp/nvim-autopairs")
-  use("windwp/nvim-ts-autotag")
+  use("windwp/nvim-ts-autotag", { requires = "nvim-treesitter/nvim-treesitter" })
   use("tpope/vim-surround")
 
   -- Comments

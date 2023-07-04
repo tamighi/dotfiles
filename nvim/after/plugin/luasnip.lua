@@ -1,12 +1,7 @@
 local status, ls = pcall(require, 'luasnip')
 if (not status) then return end
 
--- JSON snippets
--- TODO: JSON to lua
-require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/snippets/json" })
-
--- Lua snippets
-require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/lua" })
+require("luasnip.loaders.from_vscode").lazy_load()
 
 -- Keymap
 vim.keymap.set({ "i", "s" }, "<C-k>", function()

@@ -18,5 +18,4 @@ tree.setup({
 
 vim.keymap.set("n", "<leader>tr", function()
   api.tree.open()
-  api.tree.expand_all()
 end)

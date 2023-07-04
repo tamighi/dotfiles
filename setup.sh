@@ -22,9 +22,10 @@ done
 
 # GENERAL
 sudo apt update
+sudo apt upgrade
 sudo apt install curl git
 
-## Fonts
+## Font
 if $font; then
   if [ -d "${HOME}/.local/share/fonts/DejaVuSansMono" ]; then
     echo "Font already installed."

@@ -34,7 +34,6 @@ telescope.setup {
 -- keymaps
 vim.keymap.set('n', '<leader>f', builtin.find_files, {})
 vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>td', function() builtin.grep_string({ prompt_title = "TODOS", search = "TODO" }) end, {})
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set("n", "<leader>er", builtin.diagnostics, {})
 

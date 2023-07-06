@@ -3,6 +3,9 @@ if (not status) then return end
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
+ls.filetype_extend("typescript", { "javascript" })
+ls.filetype_extend("typescriptreact", { "javascript" })
+
 -- Keymap
 vim.keymap.set({ "i", "s" }, "<C-k>", function()
   if ls.expand_or_jumpable() then

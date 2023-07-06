@@ -31,9 +31,8 @@ return require("packer").startup(function(use)
   use("williamboman/mason-lspconfig.nvim")
 
   -- Autocomplete snippets
-  use("L3MON4D3/LuaSnip")             -- Snippet plugin
-  use("saadparwaiz1/cmp_luasnip")     -- Add luasnip to cmp
-  use("rafamadriz/friendly-snippets") -- Snippet package
+  use("L3MON4D3/LuaSnip")         -- Snippet plugin
+  use("saadparwaiz1/cmp_luasnip") -- Add luasnip to cmp
 
   -- Telescope (Fuzzy finder)
   use({

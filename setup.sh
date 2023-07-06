@@ -23,7 +23,7 @@ done
 # GENERAL
 sudo apt update
 sudo apt upgrade
-sudo apt install curl git
+sudo apt install curl git gcc make
 
 ## Font
 if $font; then

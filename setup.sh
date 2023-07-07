@@ -56,3 +56,26 @@ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' > /dev/
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.1/install.sh | bash
 source ${HOME}/.nvm/nvm.sh
 nvm install node
+
+# ZSH
+## installation
+sudo apt install zsh
+## symbolic link
+ln -sn $HOME/dotfiles/zsh $HOME/.config/zsh
+
+### Change .zshrc directory
+if [ -f $HOME/.zprofile ]; then
+  echo ".zprofile already exists."
+else
+  echo "export ZOTDIR=\"$HOME/.config/zsh\"" >> $HOME/.zprofile
+  echo "Create .zprofile file with ZOTDIR to $HOME/.config/zsh"
+fi
+
+### add exec zsh to bashrc
+if ! grep -q "exec zsh" "$HOME/.bashrc"; then
+  echo "exec zsh" >> "$HOME/.bashrc"
+  echo "Added 'exec zsh' to .bashrc"
+else
+  echo "Already present in .bashrc. No changes made."
+fi
+

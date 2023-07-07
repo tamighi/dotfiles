@@ -16,3 +16,9 @@ _comp_options+=(globdots)
 # Vi mode
 bindkey -v
 export KEYTIMEOUT=1
+
+# Aliases
+alias l="ls -la"
+
+# Syntax highlighting plugin
+source ~/.local/share/zsh/zsh-syntax-highlighting.git/zsh-syntax-highlighting.zsh

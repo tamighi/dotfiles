@@ -62,6 +62,7 @@ nvm install node
 sudo apt install zsh
 ## symbolic link
 ln -sn $HOME/dotfiles/zsh $HOME/.config/zsh
+## setup
 ### add exec zsh to bashrc and change .zshrc dir
 if ! grep -q "exec zsh" "$HOME/.bashrc"; then
   echo -e "\nexport ZDOTDIR=\"$HOME/.config/zsh\"" >> "$HOME/.bashrc"
@@ -72,3 +73,5 @@ else
 fi
 ### create cache dir
 mkdir -p $HOME/.cache/zsh
+### zsh-syntax-highlighting plugin
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.local/share/zsh/zsh-syntax-highlighting.git

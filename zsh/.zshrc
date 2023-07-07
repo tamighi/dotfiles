@@ -20,5 +20,17 @@ export KEYTIMEOUT=1
 # Aliases
 alias l="ls -la"
 
-# Syntax highlighting plugin
+#Plugins
+
+## Syntax highlighting plugin
 source ~/.local/share/zsh/zsh-syntax-highlighting.git/zsh-syntax-highlighting.zsh
+
+## zsh-autosuggestions
+source ~/.local/share/zsh/zsh-autosuggestions.git/zsh-autosuggestions.zsh
+bindkey '^ ' autosuggest-accept
+
+## zsh-substring history search
+source ~/.local/share/zsh/zsh-history-substring-search.git/zsh-history-substring-search.zsh
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+setopt HIST_IGNORE_ALL_DUPS

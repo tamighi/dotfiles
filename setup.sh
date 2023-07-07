@@ -75,3 +75,7 @@ fi
 mkdir -p $HOME/.cache/zsh
 ### zsh-syntax-highlighting plugin
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.local/share/zsh/zsh-syntax-highlighting.git
+### zsh-autosuggestions plugin
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.local/share/zsh/zsh-autosuggestions.git
+### history substring search
+git clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.local/share/zsh/zsh-history-substring-search.git

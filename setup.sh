@@ -62,20 +62,13 @@ nvm install node
 sudo apt install zsh
 ## symbolic link
 ln -sn $HOME/dotfiles/zsh $HOME/.config/zsh
-
-### Change .zshrc directory
-if [ -f $HOME/.zprofile ]; then
-  echo ".zprofile already exists."
-else
-  echo "export ZOTDIR=\"$HOME/.config/zsh\"" >> $HOME/.zprofile
-  echo "Create .zprofile file with ZOTDIR to $HOME/.config/zsh"
-fi
-
-### add exec zsh to bashrc
+### add exec zsh to bashrc and change .zshrc dir
 if ! grep -q "exec zsh" "$HOME/.bashrc"; then
+  echo -e "\nexport ZDOTDIR=\"$HOME/.config/zsh\"" >> "$HOME/.bashrc"
   echo "exec zsh" >> "$HOME/.bashrc"
-  echo "Added 'exec zsh' to .bashrc"
+  echo "ZSH config to .bashrc"
 else
-  echo "Already present in .bashrc. No changes made."
+  echo "No changes made to .bashrc"
 fi
-
+### create cache dir
+mkdir -p $HOME/.cache/zsh

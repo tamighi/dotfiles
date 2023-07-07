@@ -9,4 +9,10 @@ HISTFILE=~/.cache/zsh/history
 
 # Completion
 autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+_comp_options+=(globdots)
 
+# Vi mode
+bindkey -v
+export KEYTIMEOUT=1

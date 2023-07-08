@@ -60,4 +60,12 @@ nvm install node
 # ZSH
 ## installation
 sudo apt install zsh
+## install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# TMUX
+## installation
+sudo apt install tmux -y
+ln -sn ${HOME}/dotfiles/tmux ${HOME}/.config/tmux
+## tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

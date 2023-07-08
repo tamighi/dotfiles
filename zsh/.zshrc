@@ -6,6 +6,7 @@ PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_c
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
+setopt HIST_IGNORE_ALL_DUPS
 
 # Completion
 autoload -U compinit && compinit
@@ -33,4 +34,3 @@ bindkey '^ ' autosuggest-accept
 source ~/.local/share/zsh/zsh-history-substring-search.git/zsh-history-substring-search.zsh
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-setopt HIST_IGNORE_ALL_DUPS

@@ -60,22 +60,4 @@ nvm install node
 # ZSH
 ## installation
 sudo apt install zsh
-## symbolic link
-ln -sn $HOME/dotfiles/zsh $HOME/.config/zsh
-## setup
-### add exec zsh to bashrc and change .zshrc dir
-if ! grep -q "exec zsh" "$HOME/.bashrc"; then
-  echo -e "\nexport ZDOTDIR=\"$HOME/.config/zsh\"" >> "$HOME/.bashrc"
-  echo "exec zsh" >> "$HOME/.bashrc"
-  echo "ZSH config to .bashrc"
-else
-  echo "No changes made to .bashrc"
-fi
-### create cache dir
-mkdir -p $HOME/.cache/zsh
-### zsh-syntax-highlighting plugin
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.local/share/zsh/zsh-syntax-highlighting.git
-### zsh-autosuggestions plugin
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.local/share/zsh/zsh-autosuggestions.git
-### history substring search
-git clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.local/share/zsh/zsh-history-substring-search.git
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

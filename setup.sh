@@ -23,7 +23,7 @@ done
 # GENERAL
 sudo apt update
 sudo apt upgrade
-sudo apt install curl git gcc make
+sudo apt install curl git gcc make ripgrep
 
 ## Font
 if $font; then

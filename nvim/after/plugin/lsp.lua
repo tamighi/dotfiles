@@ -80,6 +80,11 @@ lspconfig.dockerls.setup {
   capabilities = capabilities
 }
 
+-- Tailwind
+lspconfig.tailwindcss.setup {
+  capabilities = capabilities
+}
+
 -- Lua
 lspconfig.lua_ls.setup {
   capabilities = capabilities,

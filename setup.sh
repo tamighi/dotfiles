@@ -23,7 +23,7 @@ done
 # GENERAL
 sudo apt update
 sudo apt upgrade
-sudo apt install curl git gcc make ripgrep
+sudo apt install curl git gcc make ripgrep xclip
 
 ## Font
 if $font; then

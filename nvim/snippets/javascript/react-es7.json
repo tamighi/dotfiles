@@ -1,11 +1,15 @@
 {
   "exportType": {
-    "body": ["export type ${1:first} = {${2:second}}"],
+    "body": [
+      "export type ${1:first} = {${2:second}}"
+    ],
     "prefix": "exptp"
   },
   "exportInterface": {
     "prefix": "expint",
-    "body": ["export interface ${1:first} {${2:second}}"]
+    "body": [
+      "export interface ${1:first} {${2:second}}"
+    ]
   },
   "typescriptReactClassComponent": {
     "prefix": "tsrcc",
@@ -561,77 +565,107 @@
   },
   "consoleAssert": {
     "prefix": "cas",
-    "body": ["console.assert(${1:first}, ${2:second})"],
+    "body": [
+      "console.assert(${1:first}, ${2:second})"
+    ],
     "description": "If the specified expression is false, the message is written to the console along with a stack trace"
   },
   "consoleClear": {
     "prefix": "ccl",
-    "body": ["console.clear()"],
+    "body": [
+      "console.clear()"
+    ],
     "description": "Clears the console"
   },
   "consoleCount": {
     "prefix": "cco",
-    "body": ["console.count(${1:first})"],
+    "body": [
+      "console.count(${1:first})"
+    ],
     "description": "Writes the the number of times that count() has been invoked at the same line and with the same label"
   },
   "consoleDir": {
     "prefix": "cdi",
-    "body": ["console.dir(${1:first})"],
+    "body": [
+      "console.dir(${1:first})"
+    ],
     "description": "Prints a JavaScript representation of the specified object"
   },
   "consoleError": {
     "prefix": "cer",
-    "body": ["console.error(${1:first})"],
+    "body": [
+      "console.error(${1:first})"
+    ],
     "description": "Displays a message in the console and also includes a stack trace from where the method was called"
   },
   "consoleGroup": {
     "prefix": "cgr",
-    "body": ["console.group('${1:first}')"],
+    "body": [
+      "console.group('${1:first}')"
+    ],
     "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called."
   },
   "consoleGroupEnd": {
     "prefix": "cge",
-    "body": ["console.groupEnd()"],
+    "body": [
+      "console.groupEnd()"
+    ],
     "description": "Closes out the corresponding console.group()."
   },
   "consoleTrace": {
     "prefix": "ctr",
-    "body": ["console.trace(${1:first})"],
+    "body": [
+      "console.trace(${1:first})"
+    ],
     "description": "Prints a stack trace from the point where the method was called"
   },
   "consoleLogObject": {
     "prefix": "clo",
-    "body": ["console.log('${1:first}', ${1:first})"],
+    "body": [
+      "console.log('${1:first}', ${1:first})"
+    ],
     "description": "Logs property with name."
   },
   "consoleLogJson": {
     "prefix": "clj",
-    "body": ["console.log('${1:first}', JSON.stringify(${1:first}, null, 2))"],
+    "body": [
+      "console.log('${1:first}', JSON.stringify(${1:first}, null, 2))"
+    ],
     "description": "Logs stringified JSON property with name."
   },
   "consoleTime": {
     "prefix": "ctm",
-    "body": ["console.time('${1:first}')"],
+    "body": [
+      "console.time('${1:first}')"
+    ],
     "description": "Console time wrapper"
   },
   "consoleTimeEnd": {
     "prefix": "cte",
-    "body": ["console.timeEnd('${1:first}')"],
+    "body": [
+      "console.timeEnd('${1:first}')"
+    ],
     "description": "Console time end wrapper"
   },
   "consoleWarn": {
     "prefix": "cwa",
-    "body": ["console.warn(${1:first})"],
+    "body": [
+      "console.warn(${1:first})"
+    ],
     "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message"
   },
   "consoleInfo": {
     "prefix": "cin",
-    "body": ["console.info(${1:first})"],
+    "body": [
+      "console.info(${1:first})"
+    ],
     "description": "Displays a message in the console but also displays a blue information icon along with the logged message"
   },
   "consoleTable": {
     "prefix": "ctl",
-    "body": ["console.table([${1:first}])"],
+    "body": [
+      "console.table([${1:first}])"
+    ],
     "description": "Logs table to console"
   },
   "useCallback": {
@@ -648,7 +682,9 @@
   },
   "useContext": {
     "prefix": "useContextSnippet",
-    "body": ["const ${1:first} = useContext(${2:second})"]
+    "body": [
+      "const ${1:first} = useContext(${2:second})"
+    ]
   },
   "useEffect": {
     "prefix": "useEffectSnippet",
@@ -689,7 +725,9 @@
   },
   "useMemo": {
     "prefix": "useMemoSnippet",
-    "body": ["useMemo(() => ${1:first}, [${2:second}])"]
+    "body": [
+      "useMemo(() => ${1:first}, [${2:second}])"
+    ]
   },
   "useReducer": {
     "prefix": "useReducerSnippet",
@@ -699,7 +737,9 @@
   },
   "useRef": {
     "prefix": "useRefSnippet",
-    "body": ["const ${1:first} = useRef(${2:second})"]
+    "body": [
+      "const ${1:first} = useRef(${2:second})"
+    ]
   },
   "useState": {
     "prefix": "useStateSnippet",
@@ -709,11 +749,15 @@
   },
   "importAs": {
     "prefix": "ima",
-    "body": ["import { ${2:second} as ${3:third} } from '${1:first}'"]
+    "body": [
+      "import { ${2:second} as ${3:third} } from '${1:first}'"
+    ]
   },
   "importBrowserRouter": {
     "prefix": "imbr",
-    "body": ["import { BrowserRouter as Router } from 'react-router-dom'"]
+    "body": [
+      "import { BrowserRouter as Router } from 'react-router-dom'"
+    ]
   },
   "importBrowserRouterWithRouteAndNavLink": {
     "prefix": "imrr",
@@ -724,31 +768,45 @@
   },
   "importDestructing": {
     "prefix": "imd",
-    "body": ["import { ${2:second} } from '${1:first}'"]
+    "body": [
+      "import { ${2:second} } from '${1:first}'"
+    ]
   },
   "importEverything": {
     "prefix": "ime",
-    "body": ["import * as ${2:second} from '${1:first}'"]
+    "body": [
+      "import * as ${2:second} from '${1:first}'"
+    ]
   },
   "importNoModuleName": {
     "prefix": "imn",
-    "body": ["import \"${1:first}\";"]
+    "body": [
+      "import \"${1:first}\";"
+    ]
   },
   "importPropTypes": {
     "prefix": "impt",
-    "body": ["import PropTypes from 'prop-types'"]
+    "body": [
+      "import PropTypes from 'prop-types'"
+    ]
   },
   "importReact": {
     "prefix": "imr",
-    "body": ["import React from 'react'"]
+    "body": [
+      "import React from 'react'"
+    ]
   },
   "importReactDom": {
     "prefix": "imrd",
-    "body": ["import ReactDOM from 'react-dom'"]
+    "body": [
+      "import ReactDOM from 'react-dom'"
+    ]
   },
   "importReactWithComponent": {
     "prefix": "imrc",
-    "body": ["import React, { Component } from 'react'"]
+    "body": [
+      "import React, { Component } from 'react'"
+    ]
   },
   "importReactWithComponentAndPropTypes": {
     "prefix": "imrcp",
@@ -760,7 +818,9 @@
   },
   "importReactWithMemo": {
     "prefix": "imrm",
-    "body": ["import React, { memo } from 'react'"]
+    "body": [
+      "import React, { memo } from 'react'"
+    ]
   },
   "importReactWithMemoAndPropTypes": {
     "prefix": "imrmp",
@@ -772,7 +832,9 @@
   },
   "importReactWithPureComponent": {
     "prefix": "imrpc",
-    "body": ["import React, { PureComponent } from 'react'"]
+    "body": [
+      "import React, { PureComponent } from 'react'"
+    ]
   },
   "importReactWithPureComponentAndPropTypes": {
     "prefix": "imrpcp",
@@ -784,23 +846,33 @@
   },
   "importRouterLink": {
     "prefix": "imbrl",
-    "body": ["import { Link } from 'react-router-dom'"]
+    "body": [
+      "import { Link } from 'react-router-dom'"
+    ]
   },
   "importRouterNavLink": {
     "prefix": "imbrnl",
-    "body": ["import { NavLink } from 'react-router-dom'"]
+    "body": [
+      "import { NavLink } from 'react-router-dom'"
+    ]
   },
   "importRouterSetup": {
     "prefix": "imbrc",
-    "body": ["import { Route, Switch, NavLink, Link } from 'react-router-dom'"]
+    "body": [
+      "import { Route, Switch, NavLink, Link } from 'react-router-dom'"
+    ]
   },
   "importRouterSwitch": {
     "prefix": "imbrs",
-    "body": ["import { Switch } from 'react-router-dom'"]
+    "body": [
+      "import { Switch } from 'react-router-dom'"
+    ]
   },
   "import": {
     "prefix": "imp",
-    "body": ["import ${2:second} from \"${1:first}\";"]
+    "body": [
+      "import ${2:second} from \"${1:first}\";"
+    ]
   },
   "reactNativeComponent": {
     "prefix": "rnc",
@@ -927,7 +999,9 @@
   },
   "reactNativeImport": {
     "prefix": "imrn",
-    "body": ["import { ${1:first} } from 'react-native'"]
+    "body": [
+      "import { ${1:first} } from 'react-native'"
+    ]
   },
   "reactNativePureComponent": {
     "prefix": "rnpc",
@@ -967,11 +1041,15 @@
   },
   "reactNativeStyles": {
     "prefix": "rnstyle",
-    "body": ["const styles = StyleSheet.create({${1:first}})"]
+    "body": [
+      "const styles = StyleSheet.create({${1:first}})"
+    ]
   },
   "importReduxConnect": {
     "prefix": "redux",
-    "body": ["import { connect } from 'react-redux'"]
+    "body": [
+      "import { connect } from 'react-redux'"
+    ]
   },
   "reduxAction": {
     "prefix": "rxaction",
@@ -985,7 +1063,9 @@
   },
   "reduxConst": {
     "prefix": "rxconst",
-    "body": ["export const ${1:first} = '${1:first}'"]
+    "body": [
+      "export const ${1:first} = '${1:first}'"
+    ]
   },
   "reduxReducer": {
     "prefix": "rxreducer",
@@ -1043,12 +1123,16 @@
   },
   "itAsyncBlock": {
     "prefix": "tita",
-    "body": ["it('should ${1:first}', async () => { ${2:second} })"],
+    "body": [
+      "it('should ${1:first}', async () => { ${2:second} })"
+    ],
     "description": "Testing asynchronous `it` block"
   },
   "itBlock": {
     "prefix": "tit",
-    "body": ["it('should ${1:first}', () => { ${2:second} })"],
+    "body": [
+      "it('should ${1:first}', () => { ${2:second} })"
+    ],
     "description": "Testing `it` block"
   },
   "setupReactComponentTestWithRedux": {
@@ -1140,114 +1224,162 @@
   },
   "testAsyncBlock": {
     "prefix": "testa",
-    "body": ["test('should ${1:first}', async () => { ${2:second} })"],
+    "body": [
+      "test('should ${1:first}', async () => { ${2:second} })"
+    ],
     "description": "Testing `asynchronous test` block"
   },
   "testBlock": {
     "prefix": "test",
-    "body": ["test('should ${1:first}', () => { ${2:second} })"],
+    "body": [
+      "test('should ${1:first}', () => { ${2:second} })"
+    ],
     "description": "Testing `test` block"
   },
   "exportDefault": {
     "prefix": "exp",
-    "body": ["export default ${1:first}"]
+    "body": [
+      "export default ${1:first}"
+    ]
   },
   "exportDestructing": {
     "prefix": "exd",
-    "body": ["export { ${2:second} } from '${1:first}'"]
+    "body": [
+      "export { ${2:second} } from '${1:first}'"
+    ]
   },
   "exportAs": {
     "prefix": "exa",
-    "body": ["export { ${2:second} as ${3:third} } from '${1:first}'"]
+    "body": [
+      "export { ${2:second} as ${3:third} } from '${1:first}'"
+    ]
   },
   "exportNamedFunction": {
     "prefix": "enf",
-    "body": ["export const ${1:first} = (${2:second}) => {${3:third}}"],
+    "body": [
+      "export const ${1:first} = (${2:second}) => {${3:third}}"
+    ],
     "description": "Export named function"
   },
   "exportDefaultFunction": {
     "prefix": "edf",
-    "body": ["export default (${1:first}) => {${2:second}}"],
+    "body": [
+      "export default (${1:first}) => {${2:second}}"
+    ],
     "description": "Export default function"
   },
   "exportDefaultNamedFunction": {
     "prefix": "ednf",
-    "body": ["export default function ${1:first}(${2:second}) {${3:third}}"],
+    "body": [
+      "export default function ${1:first}(${2:second}) {${3:third}}"
+    ],
     "description": "Export default named function"
   },
   "method": {
     "prefix": "met",
-    "body": ["${1:first} = (${2:second}) => {${3:third}}"],
+    "body": [
+      "${1:first} = (${2:second}) => {${3:third}}"
+    ],
     "description": "Creates a method inside a class"
   },
   "propertyGet": {
     "prefix": "pge",
-    "body": ["get ${1:first}() {", "  return this.${2:second}", "}"],
+    "body": [
+      "get ${1:first}() {",
+      "  return this.${2:second}",
+      "}"
+    ],
     "description": "Creates a getter property inside a class"
   },
   "propertySet": {
     "prefix": "pse",
-    "body": ["set ${1:first}(${2:second}) {${3:third}}"],
+    "body": [
+      "set ${1:first}(${2:second}) {${3:third}}"
+    ],
     "description": "Creates a setter property inside a class"
   },
   "forEach": {
     "prefix": "fre",
-    "body": ["${1:first}.forEach(${2:second} => {${3:third}})"],
+    "body": [
+      "${1:first}.forEach(${2:second} => {${3:third}})"
+    ],
     "description": "Creates a forEach statement"
   },
   "forOf": {
     "prefix": "fof",
-    "body": ["for(let ${1:first} of ${2:second}) {${3:third}}"],
+    "body": [
+      "for(let ${1:first} of ${2:second}) {${3:third}}"
+    ],
     "description": "Iterating over property names of iterable objects"
   },
   "forIn": {
     "prefix": "fin",
-    "body": ["for(let ${1:first} in ${2:second}) {${3:third}}"],
+    "body": [
+      "for(let ${1:first} in ${2:second}) {${3:third}}"
+    ],
     "description": "Iterating over property values of iterable objects"
   },
   "anonymousFunction": {
     "prefix": "anfn",
-    "body": ["(${1:first}) => { ${2:second} }"],
+    "body": [
+      "(${1:first}) => { ${2:second} }"
+    ],
     "description": "Creates an anonymous function"
   },
   "namedFunction": {
     "prefix": "nfn",
-    "body": ["const ${1:first} = (${2:second}) => { ${3:third} }"],
+    "body": [
+      "const ${1:first} = (${2:second}) => { ${3:third} }"
+    ],
     "description": "Creates a named function"
   },
   "destructingObject": {
     "prefix": "dob",
-    "body": ["const {${2:second}} = ${1:first}"],
+    "body": [
+      "const {${2:second}} = ${1:first}"
+    ],
     "description": "Creates and assigns a local variable using object destructing"
   },
   "destructingArray": {
     "prefix": "dar",
-    "body": ["const [${2:second}] = ${1:first}"],
+    "body": [
+      "const [${2:second}] = ${1:first}"
+    ],
     "description": "Creates and assigns a local variable using array destructing"
   },
   "setInterval": {
     "prefix": "sti",
-    "body": ["setInterval(() => { ${1:first} }, ${2:second})"],
+    "body": [
+      "setInterval(() => { ${1:first} }, ${2:second})"
+    ],
     "description": "Executes the given function at specified intervals"
   },
   "setTimeOut": {
     "prefix": "sto",
-    "body": ["setTimeout(() => { ${1:first} }, ${2:second})"],
+    "body": [
+      "setTimeout(() => { ${1:first} }, ${2:second})"
+    ],
     "description": "Executes the given function after the specified delay"
   },
   "promise": {
     "prefix": "prom",
-    "body": ["return new Promise((resolve, reject) => { ${1:first} })"],
+    "body": [
+      "return new Promise((resolve, reject) => { ${1:first} })"
+    ],
     "description": "Creates and returns a new Promise in the standard ES7 syntax"
   },
   "destructProps": {
     "prefix": "cp",
-    "body": ["const { ${1:first} } = this.props"],
+    "body": [
+      "const { ${1:first} } = this.props"
+    ],
     "description": "Creates and assigns a local variable using props destructing"
   },
   "destructState": {
     "prefix": "cs",
-    "body": ["const { ${1:first} } = this.state"],
+    "body": [
+      "const { ${1:first} } = this.state"
+    ],
     "description": "Creates and assigns a local variable using state destructing"
   },
   "classConstructor": {
@@ -1265,22 +1397,30 @@
   },
   "emptyState": {
     "prefix": "est",
-    "body": ["state = { ${1:first} }"],
+    "body": [
+      "state = { ${1:first} }"
+    ],
     "description": "Creates empty state object. To be used in a constructor."
   },
   "shouldComponentUpdate": {
     "prefix": "scu",
-    "body": ["shouldComponentUpdate(nextProps, nextState) { ${1:first} }"],
+    "body": [
+      "shouldComponentUpdate(nextProps, nextState) { ${1:first} }"
+    ],
     "description": "Invoked before rendering when new props or state are being received. "
   },
   "componentWillUnmount": {
     "prefix": "cwun",
-    "body": ["componentWillUnmount() {${1:first} }"],
+    "body": [
+      "componentWillUnmount() {${1:first} }"
+    ],
     "description": "Invoked immediately before a component is unmounted from the DOM."
   },
   "getDerivedStateFromProps": {
     "prefix": "gdsfp",
-    "body": ["static getDerivedStateFromProps(props, state) {${1:first}}"],
+    "body": [
+      "static getDerivedStateFromProps(props, state) {${1:first}}"
+    ],
     "description": "Invoked right before calling the render method, both on the initial mount and on subsequent updates."
   },
   "getSnapshotBeforeUpdate": {
@@ -1292,36 +1432,38 @@
   },
   "createContext": {
     "prefix": "rcontext",
-    "body": ["const ${1:first} = React.createContext()"],
+    "body": [
+      "const ${1:first} = React.createContext()"
+    ],
     "description": "Create React context"
   },
   "createRef": {
     "prefix": "cref",
-    "body": ["this.${1:first}Ref = React.createRef()"],
+    "body": [
+      "this.${1:first}Ref = React.createRef()"
+    ],
     "description": "Create ref statement used inside constructor"
-  },
-  "componentSetStateObject": {
-    "prefix": "sst",
-    "body": ["this.setState({${1:first}})"],
-    "description": "Performs a shallow merge of nextState into current state"
-  },
-  "componentSetStateFunc": {
-    "prefix": "ssf",
-    "body": ["this.setState((state, props) => { return { ${1:first} }})"],
-    "description": "Performs a shallow merge of nextState into current state"
   },
   "componentState": {
     "prefix": "state",
-    "body": ["this.state.${1:first}"]
+    "body": [
+      "this.state.${1:first}"
+    ]
   },
   "bindThis": {
     "prefix": "bnd",
-    "body": ["this.${1:first} = this.${1:first}.bind(this)"],
+    "body": [
+      "this.${1:first} = this.${1:first}.bind(this)"
+    ],
     "description": "Binds this to a method"
   },
   "commentBigBlock": {
     "prefix": "cmmb",
-    "body": ["/**", " * ${1:first}", " */"]
+    "body": [
+      "/**",
+      " * ${1:first}",
+      " */"
+    ]
   },
   "hocComponentWithRedux": {
     "prefix": "hocredux",
@@ -1364,6 +1506,8 @@
   },
   "typeofSnippet": {
     "prefix": "tpf",
-    "body": ["typeof ${1:first}"]
+    "body": [
+      "typeof ${1:first}"
+    ]
   }
 }

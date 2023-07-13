@@ -1121,20 +1121,6 @@
       "const mapDispatchToProps = {}"
     ]
   },
-  "itAsyncBlock": {
-    "prefix": "tita",
-    "body": [
-      "it('should ${1:first}', async () => { ${2:second} })"
-    ],
-    "description": "Testing asynchronous `it` block"
-  },
-  "itBlock": {
-    "prefix": "tit",
-    "body": [
-      "it('should ${1:first}', () => { ${2:second} })"
-    ],
-    "description": "Testing `it` block"
-  },
   "setupReactComponentTestWithRedux": {
     "prefix": "srtest",
     "body": [

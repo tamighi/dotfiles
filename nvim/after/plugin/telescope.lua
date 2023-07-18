@@ -9,6 +9,9 @@ end
 
 -- <C-/> in insert mode and ? in normal mode to see mappings
 telescope.setup {
+  defaults = {
+    file_ignore_patterns = { "node_modules" }
+  },
   extensions = {
     file_browser = {
       theme = "dropdown",

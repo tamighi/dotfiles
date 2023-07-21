@@ -85,6 +85,11 @@ lspconfig.tailwindcss.setup {
   capabilities = capabilities
 }
 
+-- C#
+lspconfig.csharp_ls.setup {
+  capabilities = capabilities
+}
+
 -- Lua
 lspconfig.lua_ls.setup {
   capabilities = capabilities,

@@ -14,7 +14,8 @@ treesitter.setup {
     "rust",
     "dockerfile",
     "bash",
-    "json"
+    "json",
+    "c_sharp"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)

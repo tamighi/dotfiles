@@ -11,9 +11,6 @@ tree.setup({
     dotfiles = true,
     custom = { "node_modules", "dist", "build" }
   },
-  view = {
-    width = "100%",
-  },
 })
 
 vim.keymap.set("n", "<leader>tr", function()

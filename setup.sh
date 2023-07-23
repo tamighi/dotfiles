@@ -23,7 +23,8 @@ done
 # GENERAL
 sudo apt update
 sudo apt upgrade
-sudo apt install curl git gcc make ripgrep xclip
+# libstdc++-12-dev is used for clangd in neovim
+sudo apt install curl git gcc make ripgrep xclip libstdc++-12-dev
 
 ## Font
 if $font; then

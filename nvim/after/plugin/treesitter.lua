@@ -10,12 +10,11 @@ treesitter.setup {
     "javascript",
     "typescript",
     "c",
+    "cpp",
     "lua",
-    "rust",
     "dockerfile",
     "bash",
     "json",
-    "c_sharp"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)

@@ -22,7 +22,7 @@ comment.setup {
     ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
     basic = true,
     ---Extra mapping; `gco`, `gcO`, `gcA` ; Add comment line / at eol
-    extra = false,
+    extra = true,
   },
 
   ---Function to call before (un)comment

@@ -20,8 +20,12 @@ cmp.setup({
   }),
   -- Keymaps
   mapping = cmp.mapping.preset.insert({
+    -- Scroll in cmp window
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-u>'] = cmp.mapping.scroll_docs(4),
     -- Close mapping
     ['<C-e>'] = cmp.mapping.abort(),
+    -- Open mapping
     ['<C-Space>'] = cmp.mapping.complete(),
     -- Confirm
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
@@ -37,6 +41,7 @@ cmp.setup({
         buffer = "[buf]",
         path = "[path]",
         nvim_lsp = "[LSP]",
+        nvim_lua = "[LUA]",
         luasnip = "[snip]",
       }
     })

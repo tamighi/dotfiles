@@ -24,13 +24,5 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 -- Window split
 keymap.set("n", "<C-w>v", "<C-w>v<C-w>l")
 
--- Window tabs
-keymap.set("n", "tq", ":bd<Cr>")
-keymap.set("n", "tl", ":bnext<Cr>")
-keymap.set("n", "th", ":bprev<Cr>")
-
 -- nohl
 keymap.set("n", "<leader><Cr>", ":nohl<Cr>")
-
--- Quit easier
-keymap.set("n", "<C-c>", ":q<Cr>")

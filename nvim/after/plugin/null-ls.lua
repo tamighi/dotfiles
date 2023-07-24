@@ -15,4 +15,4 @@ null_ls.setup({
   },
 })
 
-vim.keymap.set("n", "<leader>py", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>py", function() vim.lsp.buf.format { async = true } end)

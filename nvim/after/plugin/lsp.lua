@@ -23,7 +23,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     vim.keymap.set('n', ']d', vim.diagnostic.goto_prev)
     vim.keymap.set('n', '[d', vim.diagnostic.goto_next)
-    vim.keymap.set('n', '<leader>er', vim.diagnostic.setloclist)
 
     if client.name == "tsserver" then
       vim.keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>")

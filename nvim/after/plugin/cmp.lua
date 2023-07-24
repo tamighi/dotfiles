@@ -21,8 +21,8 @@ cmp.setup({
   -- Keymaps
   mapping = cmp.mapping.preset.insert({
     -- Scroll in cmp window
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-u>'] = cmp.mapping.scroll_docs(4),
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
     -- Close mapping
     ['<C-e>'] = cmp.mapping.abort(),
     -- Open mapping

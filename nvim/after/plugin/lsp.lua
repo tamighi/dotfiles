@@ -97,6 +97,11 @@ lspconfig.csharp_ls.setup {
   capabilities = capabilities
 }
 
+-- Angular
+lspconfig.angularls.setup {
+  capabilities = capabilities
+}
+
 -- Lua
 lspconfig.lua_ls.setup {
   capabilities = capabilities,

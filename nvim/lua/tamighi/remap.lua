@@ -24,5 +24,7 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 -- Window split
 keymap.set("n", "<C-w>v", "<C-w>v<C-w>l")
 
+keymap.set("n", "<C-c>", ":q<Cr>")
+
 -- nohl
 keymap.set("n", "<leader><Cr>", ":nohl<Cr>")

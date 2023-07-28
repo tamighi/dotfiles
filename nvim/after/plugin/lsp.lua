@@ -87,7 +87,13 @@ lspconfig.tailwindcss.setup {
   capabilities = capabilities
 }
 
+-- Cpp
 lspconfig.clangd.setup {
+  capabilities = capabilities
+}
+
+-- C#
+lspconfig.csharp_ls.setup {
   capabilities = capabilities
 }
 

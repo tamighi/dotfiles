@@ -7,7 +7,7 @@ local formatting = null_ls.builtins.formatting;
 null_ls.setup({
   sources = {
     formatting.prettier,
-    formatting.clang_format,
+    -- formatting.clang_format,
     -- python
     null_ls.builtins.formatting.black.with({
       extra_args = { "--line-length=120" }

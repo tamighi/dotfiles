@@ -14,6 +14,7 @@ masonlsp.setup({
     "dockerls",
     "tailwindcss",
     "csharp_ls",
-    "angularls"
+    "angularls",
+    "clangd"
   }
 })

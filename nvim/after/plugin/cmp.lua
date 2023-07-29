@@ -18,6 +18,7 @@ cmp.setup({
     { name = 'path' },
     { name = 'buffer',  keyword_length = 3 },
   }),
+
   -- Keymaps
   mapping = cmp.mapping.preset.insert({
     -- Scroll in cmp window
@@ -48,6 +49,16 @@ cmp.setup({
   },
   experimental = {
     ghost_text = true,
+  }
+})
+
+-- Remove duplicate path cmp for these filetypes
+cmp.setup.filetype({ 'typescriptreact', 'typescript' }, {
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
+    { name = 'luasnip' },
+    { name = 'buffer',  keyword_length = 3 },
   }
 })
 

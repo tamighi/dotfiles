@@ -15,6 +15,7 @@ masonlsp.setup({
     "tailwindcss",
     "csharp_ls",
     "angularls",
-    "clangd"
+    "clangd",
+    "intelephense"
   }
 })

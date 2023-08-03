@@ -72,6 +72,11 @@ lspconfig.cssls.setup {
   capabilities = capabilities
 }
 
+-- Php
+lspconfig.intelephense.setup {
+  capabilities = capabilities
+}
+
 -- Json
 lspconfig.jsonls.setup {
   capabilities = capabilities

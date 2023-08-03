@@ -7,8 +7,14 @@ local formatting = null_ls.builtins.formatting;
 null_ls.setup({
   sources = {
     formatting.prettier,
+
+    -- csharp / cpp
     -- formatting.clang_format,
     formatting.csharpier,
+
+    -- php
+    formatting.phpcsfixer,
+
     -- python
     null_ls.builtins.formatting.black.with({
       extra_args = { "--line-length=120" }

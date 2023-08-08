@@ -4,6 +4,9 @@ local luasnip = require('luasnip')
 local lspkind = require('lspkind')
 
 cmp.setup({
+  performance = {
+    max_view_entries = 50
+  },
   -- Snippet setup
   snippet = {
     expand = function(args)
@@ -14,9 +17,9 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
-    { name = 'luasnip' },
-    { name = 'path' },
-    { name = 'buffer',  keyword_length = 3 },
+    { name = 'luasnip', },
+    { name = 'path',    max_item_count = 3 },
+    { name = 'buffer',  max_item_count = 3, keyword_length = 3 },
   }),
 
   -- Keymaps

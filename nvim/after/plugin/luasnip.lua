@@ -4,7 +4,7 @@ local loaders = require("luasnip.loaders")
 
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/snippets" } })
 
---ls.filetype_extend("php", { "html" })
+ls.filetype_extend("twig", { "html" })
 
 -- Keymap
 vim.keymap.set({ "i" }, "<C-K>", function() ls.expand() end, { silent = true })

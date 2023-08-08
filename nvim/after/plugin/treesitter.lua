@@ -15,7 +15,7 @@ treesitter.setup {
     "dockerfile",
     "bash",
     "json",
-    "php"
+    "php",
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)

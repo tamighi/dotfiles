@@ -13,7 +13,7 @@ null_ls.setup({
     formatting.csharpier,
 
     -- php
-    formatting.phpcsfixer,
+    --formatting.phpcsfixer,
 
     -- python
     null_ls.builtins.formatting.black.with({

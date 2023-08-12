@@ -28,5 +28,8 @@ treesitter.setup {
     enable = true,
     disable = { "python" }
   },
-  disable = { "python" }
+  disable = { "python" },
+  indent = {
+    enable = true
+  }
 }

@@ -18,6 +18,8 @@ opt.termguicolors = true
 opt.cursorline = true
 opt.colorcolumn = "80"
 
+vim.cmd.colorscheme("night-owl")
+
 -- space tabs
 opt.tabstop = 2
 opt.softtabstop = 2

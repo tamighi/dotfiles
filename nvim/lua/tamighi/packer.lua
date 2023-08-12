@@ -3,10 +3,7 @@ return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
 
   -- Theme
-  use({
-    "svrana/neosolarized.nvim",
-    requires = { "tjdevries/colorbuddy.nvim" },
-  })
+  use("oxfist/night-owl.nvim")
 
   -- Lualine
   use({

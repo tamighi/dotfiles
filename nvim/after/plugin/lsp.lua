@@ -57,6 +57,11 @@ typescript.setup {
   }
 }
 
+-- Angular
+lspconfig.angularls.setup {
+  capabilities = capabilities
+}
+
 -- Python
 lspconfig.pyright.setup {
   capabilities = capabilities
@@ -99,11 +104,6 @@ lspconfig.clangd.setup {
 
 -- C#
 lspconfig.csharp_ls.setup {
-  capabilities = capabilities
-}
-
--- Angular
-lspconfig.angularls.setup {
   capabilities = capabilities
 }
 

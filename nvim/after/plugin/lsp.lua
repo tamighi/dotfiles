@@ -48,7 +48,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local capabilities = cmp_lsp.default_capabilities()
 
 
--- Typescript with the ts plugin
+-- Typescript withRemoved null-ls
 typescript.setup {
   server = {
     capabilities = capabilities,

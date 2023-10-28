@@ -64,9 +64,6 @@ return require("packer").startup(function(use)
   -- Git
   use("tpope/vim-fugitive")
 
-  -- Prettier
-  use("jose-elias-alvarez/null-ls.nvim")
-
   -- Harpoon
   use("ThePrimeagen/harpoon")
 end)

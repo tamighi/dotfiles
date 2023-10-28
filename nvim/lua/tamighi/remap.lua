@@ -29,3 +29,10 @@ keymap.set("n", "<C-c>", ":q<Cr>")
 
 -- nohl
 keymap.set("n", "<leader><Cr>", ":nohl<Cr>")
+
+-- Section jump
+keymap.set("n", "[[", "?{<CR>")
+keymap.set("n", "]]", "/{<CR>")
+
+keymap.set("n", "][", "?}<CR>")
+keymap.set("n", "[]", "/}<CR>")

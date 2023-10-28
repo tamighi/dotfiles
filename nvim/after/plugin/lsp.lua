@@ -20,6 +20,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>rr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set('n', '<leader>py', vim.lsp.buf.format, opts)
 
     vim.keymap.set('n', ']d', vim.diagnostic.goto_prev)
     vim.keymap.set('n', '[d', vim.diagnostic.goto_next)

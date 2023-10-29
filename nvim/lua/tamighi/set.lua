@@ -46,6 +46,3 @@ vim.g.mapleader = " "
 
 -- split
 opt.splitright = true
-
--- clipboard to system
--- opt.clipboard = "unnamedplus"

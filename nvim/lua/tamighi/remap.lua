@@ -36,3 +36,6 @@ keymap.set("n", "]]", "/{<CR>")
 
 keymap.set("n", "][", "?}<CR>")
 keymap.set("n", "[]", "/}<CR>")
+
+-- Copy to clipboard
+keymap.set("v", "<C-y>", "\"+y")

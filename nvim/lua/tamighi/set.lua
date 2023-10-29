@@ -48,4 +48,4 @@ vim.g.mapleader = " "
 opt.splitright = true
 
 -- clipboard to system
-opt.clipboard = "unnamedplus"
+-- opt.clipboard = "unnamedplus"

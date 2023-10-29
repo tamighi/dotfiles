@@ -18,8 +18,8 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
     { name = 'luasnip', },
-    { name = 'path',    max_item_count = 3 },
-    { name = 'buffer',  max_item_count = 3, keyword_length = 3 },
+    { name = 'path' },
+    { name = 'buffer',  keyword_length = 3 },
   }),
 
   -- Keymaps

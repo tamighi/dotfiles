@@ -25,7 +25,7 @@ return require("packer").startup(function(use)
 
   -- Mason for lsp servers
   use("williamboman/mason.nvim")
-  use("williamboman/mason-lspconfig.nvim")
+  use({ "williamboman/mason-lspconfig.nvim", require = { "williamboman/mason.nvim" } })
 
   -- Autocomplete snippets
   use("L3MON4D3/LuaSnip")         -- Snippet plugin
@@ -44,6 +44,10 @@ return require("packer").startup(function(use)
 
   -- Syntax highlighting
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+
+  -- Debuger
+  use("mfussenegger/nvim-dap")
+  use({ "jay-babu/mason-nvim-dap.nvim", require = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" } })
 
   -- Pairs/tags
   use("windwp/nvim-autopairs")

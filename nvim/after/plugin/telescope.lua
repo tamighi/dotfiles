@@ -52,5 +52,12 @@ vim.keymap.set("n", "<leader>fb", function()
   })
 end)
 
+vim.keymap.set("n", "<leader>pv", function()
+  telescope.extensions.file_browser.file_browser({
+    path = "%:p:h",
+    cwd = telescope_buffer_dir(),
+  })
+end)
+
 telescope.load_extension("file_browser")
 telescope.load_extension('fzf')

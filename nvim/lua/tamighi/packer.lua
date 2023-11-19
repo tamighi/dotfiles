@@ -18,6 +18,9 @@ return require("packer").startup(function(use)
   -- Linting
   use ('mfussenegger/nvim-lint')
 
+  -- Formatting
+  use ('stevearc/conform.nvim')
+
   -- Autocomplete
   use("hrsh7th/nvim-cmp")     -- Completion
   use("hrsh7th/cmp-buffer")   -- Buffer completion
@@ -42,6 +45,8 @@ return require("packer").startup(function(use)
   })
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- Optimizer
   use("nvim-telescope/telescope-file-browser.nvim")                 -- file browser
+
+  -- Tree
   use("nvim-tree/nvim-web-devicons")                                -- Icons
   use("nvim-tree/nvim-tree.lua")                                    -- Tree for a better global view
 

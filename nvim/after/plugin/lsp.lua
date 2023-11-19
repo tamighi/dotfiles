@@ -20,7 +20,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>rr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set('n', '<leader>py', vim.lsp.buf.format, opts)
 
     vim.keymap.set('n', ']d', vim.diagnostic.goto_prev)
     vim.keymap.set('n', '[d', vim.diagnostic.goto_next)
@@ -29,22 +28,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>")
       vim.keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>")
     end
-
-    -- Format on save
-    -- if client.server_capabilities.documentFormattingProvider then
-    --   vim.api.nvim_create_autocmd("BufWritePre", {
-    --     group = vim.api.nvim_create_augroup("Format", { clear = true }),
-    --     buffer = ev.buf,
-    --     callback = function() vim.lsp.buf.format() end
-    --   })
-    -- end
   end,
 })
 
 -- Language server setup
--- capabilities = autocomplete
 
--- local lsp_default = lspconfig.util.default_config
+-- capabilities = autocomplete
 local capabilities = cmp_lsp.default_capabilities()
 
 

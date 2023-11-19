@@ -27,14 +27,6 @@ keymap.set("n", "<C-c>", ":q<Cr>")
 -- Clear search with <esc>
 keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
--- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
-keymap.set("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next search result" })
-keymap.set("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-keymap.set("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-keymap.set("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev search result" })
-keymap.set("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
-keymap.set("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
-
 -- Section jump
 keymap.set("n", "[[", "?{<CR>")
 keymap.set("n", "]]", "/{<CR>")

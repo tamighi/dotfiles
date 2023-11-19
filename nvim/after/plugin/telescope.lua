@@ -9,14 +9,11 @@ end
 
 -- <C-/> in insert mode and ? in normal mode to see mappings
 telescope.setup {
-  defaults = {
-    file_ignore_patterns = { "node_modules" }
-  },
   extensions = {
     file_browser = {
+      file_ignore_patterns = {},
       theme = "dropdown",
-      --hijack_netrw = true,
-      respect_gitignore = false,
+      hijack_netrw = true,
       hidden = true,
       grouped = true,
       previewer = false,
@@ -35,7 +32,8 @@ telescope.setup {
 }
 
 -- keymaps
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ hidden = true, file_ignore_patterns = { ".git" } }) end,
+  {})
 vim.keymap.set('n', '<leader>fw', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
 vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {})

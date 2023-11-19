@@ -15,6 +15,9 @@ return require("packer").startup(function(use)
   use("neovim/nvim-lspconfig")
   use("jose-elias-alvarez/typescript.nvim") -- LSP utils for typescript
 
+  -- Linting
+  use ('mfussenegger/nvim-lint')
+
   -- Autocomplete
   use("hrsh7th/nvim-cmp")     -- Completion
   use("hrsh7th/cmp-buffer")   -- Buffer completion
@@ -46,8 +49,9 @@ return require("packer").startup(function(use)
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
   -- Debuger
-  use("mfussenegger/nvim-dap")
-  use({ "jay-babu/mason-nvim-dap.nvim", require = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" } })
+  use({ "mfussenegger/nvim-dap", requires = { "wbthomason/packer.nvim" } })
+  use("theHamsta/nvim-dap-virtual-text")
+  use("jay-babu/mason-nvim-dap.nvim")
 
   -- Pairs/tags
   use("windwp/nvim-autopairs")

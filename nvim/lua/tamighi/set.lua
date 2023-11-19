@@ -8,10 +8,6 @@ opt.relativenumber = true
 opt.swapfile = false
 opt.backup = false
 
--- undos
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-opt.undofile = true
-
 -- ui
 opt.title = true
 opt.termguicolors = true

@@ -13,7 +13,6 @@ telescope.setup {
     file_browser = {
       file_ignore_patterns = {},
       theme = "dropdown",
-      hijack_netrw = true,
       hidden = true,
       grouped = true,
       previewer = false,

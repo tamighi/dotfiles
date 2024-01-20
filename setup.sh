@@ -33,9 +33,10 @@ sudo apt install -y \
   ripgrep \
   xclip \
 
-## utilities: rimraf
+## utilities: rimraf, fzf
 sudo apt install -y \
   rimraf \
+  fzf
   #g++ \
   #libstdc++-12-dev
 
@@ -80,6 +81,8 @@ sudo apt install zsh
 ## install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ## needs restart to apply as default term
+
+cp .zshrc ~/.zshrc
 
 # TMUX
 

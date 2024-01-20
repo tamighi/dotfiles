@@ -100,11 +100,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# NPM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Define the custom widget function
+# Android studio
+export ANDROID_HOME=$HOME/Android/Sdk
+
+# FZF for projects
 my_fzf_dirs_widget() {
   local dirs
   dirs=$(find ~/Documents/learning ~/Documents/projects -maxdepth 1 -type d -print | fzf)
@@ -112,8 +116,5 @@ my_fzf_dirs_widget() {
     cd "$dirs"
   fi
 }
-
 zle -N my_fzf_dirs_widget
-
-# Bind the custom widget to <C-f>
 bindkey '^f' my_fzf_dirs_widget

@@ -33,7 +33,7 @@ sudo apt install -y \
   ripgrep \
   xclip \
 
-## utilities: rimraf, fzf
+## utilities
 sudo apt install -y \
   rimraf \
   fzf
@@ -82,7 +82,7 @@ sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ## needs restart to apply as default term
 
-cp .zshrc ~/.zshrc
+cp -i .zshrc ~/.zshrc
 
 # TMUX
 
@@ -91,3 +91,17 @@ sudo apt install tmux -y
 ln -sn ${HOME}/dotfiles/tmux ${HOME}/.config/tmux
 ## tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# DOCKER
+
+echo "Do you wish to install docker? (y/n)"
+read answer
+
+if [ "$answer" == "y" ]; then
+  sudo apt install apt-transport-https ca-certificates curl software-properties-common
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+  sudo apt install docker-ce
+else
+    echo "Installation aborted."
+fi

@@ -111,3 +111,6 @@ lspconfig.lua_ls.setup {
     },
   }
 }
+
+-- LaTex
+lspconfig.texlab.setup {}

@@ -17,7 +17,8 @@ masonlsp.setup({
     "csharp_ls",
     "angularls",
     "clangd",
-    "intelephense"
+    "intelephense",
+    "texlab"
   }
 })
 

@@ -16,10 +16,10 @@ return require("packer").startup(function(use)
   use("jose-elias-alvarez/typescript.nvim") -- LSP utils for typescript
 
   -- Linting
-  use ('mfussenegger/nvim-lint')
+  use('mfussenegger/nvim-lint')
 
   -- Formatting
-  use ('stevearc/conform.nvim')
+  use('stevearc/conform.nvim')
 
   -- Autocomplete
   use("hrsh7th/nvim-cmp")     -- Completion
@@ -40,15 +40,15 @@ return require("packer").startup(function(use)
   -- Telescope (Fuzzy finder)
   use({
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.0",
+    tag = "0.1.5",
     requires = { { "nvim-lua/plenary.nvim" } },
   })
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- Optimizer
   use("nvim-telescope/telescope-file-browser.nvim")                 -- file browser
 
   -- Tree
-  use("nvim-tree/nvim-web-devicons")                                -- Icons
-  use("nvim-tree/nvim-tree.lua")                                    -- Tree for a better global view
+  use("nvim-tree/nvim-web-devicons") -- Icons
+  use("nvim-tree/nvim-tree.lua")     -- Tree for a better global view
 
   -- Syntax highlighting
   use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })

@@ -21,20 +21,43 @@ while getopts "f" opt; do
 done
 
 # GENERAL
+
 sudo apt update
 sudo apt upgrade
-sudo apt install \
-  curl \
-  git \
+
+## nvim: gcc (treesitter), curl (npm), make & ripgrep (fzf), xclip (copy with C-y).
+sudo apt install -y \
   gcc \
-  g++ \
+  curl \
   make \
   ripgrep \
   xclip \
-  libstdc++-12-dev \
-  composer
 
-## Font
+## utilities: rimraf
+sudo apt install -y \
+  rimraf \
+  #g++ \
+  #libstdc++-12-dev
+
+# NVIM
+
+## installation
+sudo snap install nvim --classic
+## symbolic link
+ln -sn ${HOME}/dotfiles/nvim ${HOME}/.config/nvim
+
+## Configure Packer
+### setup packer
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+## Then :so & :PackerSync twice in packer setup file.
+
+### install npm for Mason
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.1/install.sh | bash
+source ${HOME}/.nvm/nvm.sh
+nvm install node
+
+# Font
 if $font; then
   if [ -d "${HOME}/.local/share/fonts/DejaVuSansMono" ]; then
     echo "Font already installed."
@@ -50,29 +73,16 @@ if $font; then
   fi
 fi
 
-# NVIM
-## installation
-sudo snap install nvim --classic
-## symbolic link
-ln -sn ${HOME}/dotfiles/nvim ${HOME}/.config/nvim
-## Configure Packer
-### setup packer
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-echo "Executing nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' silently..."
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' > /dev/null 2>&1
-### install npm for Mason
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.1/install.sh | bash
-source ${HOME}/.nvm/nvm.sh
-nvm install node
-
 # ZSH
+
 ## installation
 sudo apt install zsh
 ## install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+## needs restart to apply as default term
 
 # TMUX
+
 ## installation
 sudo apt install tmux -y
 ln -sn ${HOME}/dotfiles/tmux ${HOME}/.config/tmux

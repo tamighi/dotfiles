@@ -14,7 +14,6 @@ masonlsp.setup({
     "pyright",
     "dockerls",
     "tailwindcss",
-    "csharp_ls",
     "angularls",
     "clangd",
     "intelephense",

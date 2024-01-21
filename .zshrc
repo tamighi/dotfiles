@@ -108,6 +108,9 @@ export NVM_DIR="$HOME/.nvm"
 # Android studio
 export ANDROID_HOME=$HOME/Android/Sdk
 
+# Texlive
+export PATH=$PATH:/usr/local/texlive/2023/bin/x86_64-linux
+
 # FZF for projects
 my_fzf_dirs_widget() {
   local dirs

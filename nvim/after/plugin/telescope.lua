@@ -16,6 +16,7 @@ telescope.setup {
       hidden = true,
       grouped = true,
       previewer = false,
+      hijack_netrw = true,
       layout_config = { height = 40 },
       mappings = {
         ["i"] = {

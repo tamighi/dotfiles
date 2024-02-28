@@ -117,6 +117,7 @@ my_fzf_dirs_widget() {
   dirs=$(find ~/Documents/learning ~/Documents/projects -maxdepth 1 -type d -print | fzf)
   if [[ -n "$dirs" ]]; then
     cd "$dirs"
+    zle reset-prompt
   fi
 }
 zle -N my_fzf_dirs_widget

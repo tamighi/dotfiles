@@ -45,4 +45,4 @@ keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
 
 -- Copy to clipboard
-keymap.set("v", "<C-y>", "\"+y")
+keymap.set("v", "<C-c>", "\"+y")

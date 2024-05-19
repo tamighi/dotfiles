@@ -44,5 +44,7 @@ keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true }
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
 
+keymap.set("v", "p", "\"0p")
+
 -- Copy to clipboard
 keymap.set("v", "<C-c>", "\"+y")

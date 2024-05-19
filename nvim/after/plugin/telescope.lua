@@ -32,25 +32,15 @@ telescope.setup {
 }
 
 -- keymaps
-vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ hidden = true, file_ignore_patterns = { ".git" } }) end,
+vim.keymap.set('n', '<leader>f', function() builtin.find_files({ hidden = true, file_ignore_patterns = { ".git" } }) end,
   {})
-vim.keymap.set('n', '<leader>fw', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
-vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {})
-vim.keymap.set("n", "<leader>fk", builtin.keymaps, {})
+vim.keymap.set('n', '<leader>w', builtin.live_grep, {})
+vim.keymap.set("n", "<leader>k", builtin.keymaps, {})
 
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>fp', builtin.resume, {})
+vim.keymap.set('n', '<leader>h', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>p', builtin.resume, {})
 
--- File browser
-vim.keymap.set("n", "<leader>fb", function()
-  telescope.extensions.file_browser.file_browser({
-    path = "%:p:h",
-    cwd = telescope_buffer_dir(),
-  })
-end)
-
-vim.keymap.set("n", "<leader>pv", function()
+vim.keymap.set("n", "<leader>b", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
     cwd = telescope_buffer_dir(),

@@ -1,19 +1,48 @@
 return require("packer").startup(function(use)
+  --[[
+  --    Core
+  --]]
+
   -- Packer
   use("wbthomason/packer.nvim")
+  -- Mason
+  use("williamboman/mason.nvim")
+
+  --[[
+        UI
+  --]]
 
   -- Theme
   use("oxfist/night-owl.nvim")
-
   -- Lualine
   use({
     "nvim-lualine/lualine.nvim",
     requires = { "nvim-tree/nvim-web-devicons", opt = true },
   })
+  -- Icons
+  use("nvim-tree/nvim-web-devicons")
+
+  --[[
+  --    LSP
+  --]]
 
   -- LSP
   use("neovim/nvim-lspconfig")
-  use("jose-elias-alvarez/typescript.nvim") -- LSP utils for typescript
+  use("jose-elias-alvarez/typescript.nvim")
+
+  -- LSP servers
+  use({ "williamboman/mason-lspconfig.nvim", require = { "williamboman/mason.nvim" } })
+
+  --[[
+  --    Syntax
+  --]]
+
+  -- Syntax highlighting
+  use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+
+  --[[
+  --    Linting & formatting
+  --]]
 
   -- Linting
   use('mfussenegger/nvim-lint')
@@ -21,42 +50,18 @@ return require("packer").startup(function(use)
   -- Formatting
   use('stevearc/conform.nvim')
 
-  -- Autocomplete
-  use("hrsh7th/nvim-cmp")     -- Completion
-  use("hrsh7th/cmp-buffer")   -- Buffer completion
-  use("hrsh7th/cmp-path")     -- Path completion
-  use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in LSP
-  use("hrsh7th/cmp-nvim-lua") -- for vim global in lua
-  use("onsails/lspkind-nvim") -- Icons
+  --[[
+  --    Debugger
+  --]]
 
-  -- Mason for lsp servers
-  use("williamboman/mason.nvim")
-  use({ "williamboman/mason-lspconfig.nvim", require = { "williamboman/mason.nvim" } })
-
-  -- Autocomplete snippets
-  use("L3MON4D3/LuaSnip")         -- Snippet plugin
-  use("saadparwaiz1/cmp_luasnip") -- Add luasnip to cmp
-
-  -- Telescope (Fuzzy finder)
-  use({
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.5",
-    requires = { { "nvim-lua/plenary.nvim" } },
-  })
-  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- Optimizer
-  use("nvim-telescope/telescope-file-browser.nvim")                 -- file browser
-
-  -- Tree
-  use("nvim-tree/nvim-web-devicons") -- Icons
-  use("nvim-tree/nvim-tree.lua")     -- Tree for a better global view
-
-  -- Syntax highlighting
-  use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-
-  -- Debuger
+  -- Dap
   use({ "mfussenegger/nvim-dap", requires = { "wbthomason/packer.nvim" } })
   use("theHamsta/nvim-dap-virtual-text")
   use("jay-babu/mason-nvim-dap.nvim")
+
+  --[[
+  --    Mapping & other utilities
+  --]]
 
   -- Pairs/tags
   use("windwp/nvim-autopairs")
@@ -71,12 +76,42 @@ return require("packer").startup(function(use)
     },
   })
 
-  -- Zen mode
-  use("folke/zen-mode.nvim")
+  --[[
+  --    Autocomplete
+  --]]
 
-  -- Git
-  use("tpope/vim-fugitive")
+  -- CMP
+  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-nvim-lua") -- VIM globals
+  use("onsails/lspkind-nvim") -- Icons
+
+  -- Autocomplete snippets
+  use("L3MON4D3/LuaSnip")
+  use("saadparwaiz1/cmp_luasnip")
+
+  --[[
+  --    Navigation
+  --]]
+
+  -- Telescope (Fuzzy finder)
+  use({
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.5",
+    requires = { { "nvim-lua/plenary.nvim" } },
+  })
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- Optimizer
+  use("nvim-telescope/telescope-file-browser.nvim")                 -- file browser
 
   -- Harpoon
   use("ThePrimeagen/harpoon")
+
+  --[[
+  --    Git
+  --]]
+
+  -- Git
+  use("tpope/vim-fugitive")
 end)

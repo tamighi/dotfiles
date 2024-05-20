@@ -100,7 +100,8 @@ return require("packer").startup(function(use)
     requires = { { "nvim-lua/plenary.nvim" } },
   })
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- Optimizer
-  use("nvim-telescope/telescope-file-browser.nvim")                 -- file browser
+
+  use({ "stevearc/oil.nvim", requires = { "nvim-tree/nvim-web-devicons" } })
 
   -- Harpoon
   use {

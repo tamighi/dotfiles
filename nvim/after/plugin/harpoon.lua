@@ -1,11 +1,11 @@
-local status, mark = pcall(require, 'harpoon.mark')
+local status, harpoon = pcall(require, 'harpoon')
 if (not status) then return end
-local ui = require('harpoon.ui')
 
-vim.keymap.set('n', '<leader>a', mark.add_file)
-vim.keymap.set('n', '<C-e>', ui.toggle_quick_menu)
+harpoon:setup()
 
-vim.keymap.set('n', '<leader>1', function() ui.nav_file(1) end)
-vim.keymap.set('n', '<leader>2', function() ui.nav_file(2) end)
-vim.keymap.set('n', '<leader>3', function() ui.nav_file(3) end)
-vim.keymap.set('n', '<leader>4', function() ui.nav_file(4) end)
+vim.keymap.set('n', '<leader>a', function() harpoon:list():add() end)
+vim.keymap.set('n', '<C-e>', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+for i = 1, 9 do
+  vim.keymap.set('n', '<leader>' .. i, function() harpoon:list():select(i) end)
+end

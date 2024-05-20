@@ -14,9 +14,3 @@ conform.setup({
   },
   format_on_save = format_options
 })
-
-vim.keymap.set({ "n", "v" }, "<leader>py",
-  function()
-    conform.format(format_options);
-  end
-)

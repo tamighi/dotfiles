@@ -3,10 +3,9 @@ return require("packer").startup(function(use)
   --    Core
   --]]
 
-  -- Packer
   use("wbthomason/packer.nvim")
-  -- Mason
   use("williamboman/mason.nvim")
+  use "nvim-lua/plenary.nvim" -- Coroutines for other plugins
 
   --[[
         UI
@@ -106,7 +105,11 @@ return require("packer").startup(function(use)
   use("nvim-telescope/telescope-file-browser.nvim")                 -- file browser
 
   -- Harpoon
-  use("ThePrimeagen/harpoon")
+  use {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { { "nvim-lua/plenary.nvim" } }
+  }
 
   --[[
   --    Git
@@ -114,4 +117,10 @@ return require("packer").startup(function(use)
 
   -- Git
   use("tpope/vim-fugitive")
+
+  --[[
+  --    Others
+  --]]
+
+  use("tjdevries/vlog.nvim")
 end)

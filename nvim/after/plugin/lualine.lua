@@ -1,13 +1,13 @@
 local status, lualine = pcall(require, "lualine")
 if (not status) then return end
-local hp_marks = require('harpoon.mark')
+local harpoon = require('harpoon')
 local devicons = require('nvim-web-devicons')
 
 function Harpoon_files()
   local contents = {}
 
-  for idx = 1, hp_marks.get_length() do
-    local file_path = hp_marks.get_marked_file_name(idx)
+  for idx = 1, harpoon:list():length() do
+    local file_path = harpoon:list():get(idx).value
     local file_name
     if file_path == "" then
       file_name = "(empty)"
@@ -23,7 +23,7 @@ function Harpoon_files()
       prev = " "
     end
     local next = ""
-    if idx < hp_marks.get_length() then
+    if idx < harpoon:list():length() then
       next = " "
     end
     if file_path == current_file_path then

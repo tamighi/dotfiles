@@ -2,36 +2,7 @@ local status, dap = pcall(require, 'dap')
 if (not status) then return end
 local dap_text = require("nvim-dap-virtual-text")
 
-dap.adapters.codelldb = {
-  id = "codelldb",
-  type = 'server',
-  port = '${port}',
-  executable = {
-    command = vim.fn.exepath('codelldb'),
-    args = { '--port', '${port}' },
-  },
-}
-
-dap.configurations.cpp = {
-  {
-    name = "Debug using codelldb",
-    type = "codelldb",
-    request = "launch",
-    program = function()
-      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-    end,
-    cwd = "${workspaceFolder}",
-    stopOnEntry = false,
-    args = {},
-  },
-}
-
-vim.api.nvim_exec([[
-    autocmd FileType dap-repl lua require('dap.ext.autocompl').attach()
-]], false)
-
-dap.defaults.fallback.terminal_win_cmd = '50vsplit new'
-
+-- TODO: Config & keymaps
 dap_text.setup();
 
 vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint);

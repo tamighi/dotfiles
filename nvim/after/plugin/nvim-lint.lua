@@ -6,8 +6,8 @@ lint.linters_by_ft = {
   typescriptreact = { 'eslint' },
 }
 
-vim.api.nvim_create_autocmd({ "InsertLeave", "BufEnter", "BufWritePost" }, {
-  callback = function()
-    lint.try_lint()
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "InsertLeave", "BufEnter", "BufWritePost" }, {
+--   callback = function()
+--     lint.try_lint()
+--   end,
+-- })

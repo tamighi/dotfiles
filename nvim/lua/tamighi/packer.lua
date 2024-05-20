@@ -86,9 +86,8 @@ return require("packer").startup(function(use)
   use("hrsh7th/cmp-nvim-lsp")
   use("onsails/lspkind-nvim") -- Icons
 
-  -- Autocomplete snippets
+  -- Snippets
   use({ "L3MON4D3/LuaSnip", build = "make install-jsregexp" })
-  use("saadparwaiz1/cmp_luasnip")
 
   --[[
   --    Navigation

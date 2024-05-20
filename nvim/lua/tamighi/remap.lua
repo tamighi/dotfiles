@@ -1,9 +1,5 @@
 local keymap = vim.keymap
 
--- Move blocks of line in visual mode
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
 -- Window centered when scroll
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
@@ -14,6 +10,9 @@ keymap.set("n", "N", "Nzzzv")
 
 -- No yank for x
 keymap.set("n", "x", '"_x')
+
+-- Copy to clipboard
+keymap.set("v", "<C-c>", "\"+y")
 
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
@@ -43,8 +42,3 @@ keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true }
 -- better indenting
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
-
-keymap.set("v", "p", "\"0p")
-
--- Copy to clipboard
-keymap.set("v", "<C-c>", "\"+y")

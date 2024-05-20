@@ -1,27 +1,5 @@
-local status, mason = pcall(require, 'mason')
+local status, dap = pcall(require, 'dap')
 if (not status) then return end
-local masonlsp = require('mason-lspconfig')
-
-mason.setup()
-
-masonlsp.setup({
-  ensure_installed = {
-    "tsserver",
-    "html",
-    "cssls",
-    "lua_ls",
-    "jsonls",
-    "pyright",
-    "dockerls",
-    "tailwindcss",
-    "angularls",
-    "clangd",
-    "intelephense",
-    "texlab"
-  }
-})
-
-local dap = require('dap')
 local dap_text = require("nvim-dap-virtual-text")
 
 dap.adapters.codelldb = {

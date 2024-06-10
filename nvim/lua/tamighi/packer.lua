@@ -84,10 +84,12 @@ return require("packer").startup(function(use)
   use("hrsh7th/cmp-buffer")
   use("hrsh7th/cmp-path")
   use("hrsh7th/cmp-nvim-lsp")
+  use("saadparwaiz1/cmp_luasnip")
   use("onsails/lspkind-nvim") -- Icons
 
   -- Snippets
-  use({ "L3MON4D3/LuaSnip", build = "make install-jsregexp" })
+  use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp", dependencies = { "rafamadriz/friendly-snippets" } })
+  use("rafamadriz/friendly-snippets")
 
   --[[
   --    Navigation

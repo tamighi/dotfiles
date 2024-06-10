@@ -11,12 +11,13 @@ vim.opt.completeopt = { "noselect", "menu", "menuone" }
 cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name = 'luasnip' },
     { name = 'path' },
     { name = 'buffer' },
   }),
 
   mapping = {
-    ['<C-y>'] = cmp.mapping(cmp.mapping.confirm({
+    ['<C-k>'] = cmp.mapping(cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Insert,
       select = true
     }), { "i", "c" }),
@@ -25,7 +26,21 @@ cmp.setup({
     ["<C-p>"] = cmp.mapping.select_prev_item(),
   },
 
-  formatting = { format = lspkind.cmp_format({ mode = 'symbol_text' }) },
+  formatting = {
+    format = lspkind.cmp_format({
+      menu = {
+        buffer = "[buf]",
+        path = "[path]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[LUA]",
+        luasnip = "[snip]",
+      }
+    })
+  },
+
+  experimental = {
+    ghost_text = true,
+  },
 
   snippet = {
     expand = function(args)
@@ -34,24 +49,12 @@ cmp.setup({
   },
 })
 
--- luasnip
-luasnip.config.set_config {
-  history = false,
-  updateevent = "TextChanged,TextChanged1"
-}
-
-for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/snippets/*.lua", true)) do
-  loadfile(ft_path)()
-end
-
-vim.keymap.set({ "i", "s" }, "<C-k>", function()
-  if luasnip.expand_or_jumpable() then
-    luasnip.expand_or_jump()
-  end
-end, { silent = true })
-
-vim.keymap.set({ "i", "s" }, "<C-j>", function()
-  if luasnip.jumpable(-1) then
-    luasnip.jump(-1)
-  end
-end, { silent = true })
+-- Remove duplicate path cmp for these filetypes
+cmp.setup.filetype({ 'typescriptreact', 'typescript' }, {
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
+    { name = 'luasnip' },
+    { name = 'buffer',  keyword_length = 3 },
+  }
+})

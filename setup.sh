@@ -1,31 +1,10 @@
 #!/bin/bash
 
-font=false
-
-usage() {
-  echo "Usage: ./setup [-f]"
-  echo "Options:"
-  echo "  -f    for fonts"
-  exit 1
-}
-
-while getopts "f" opt; do
-  case $opt in
-    f)
-      font=true
-      ;;
-    *)
-      usage
-      ;;
-  esac
-done
-
 # GENERAL
-
 sudo apt update
 sudo apt upgrade
 
-## nvim: gcc (treesitter), curl (npm), make & ripgrep (fzf), xclip (copy with C-y).
+## nvim: gcc (treesitter), curl (npm), make & ripgrep (fzf), xclip (copy with C-c in vim).
 sudo apt install -y \
   gcc \
   curl \
@@ -58,27 +37,11 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.1/install.sh | b
 source ${HOME}/.nvm/nvm.sh
 nvm install node
 
-# Font
-if $font; then
-  if [ -d "${HOME}/.local/share/fonts/DejaVuSansMono" ]; then
-    echo "Font already installed."
-    exit 1
-  else
-    mkdir -p ${HOME}/.local/share/fonts/DejaVuSansMono
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/DejaVuSansMono.zip 
-    echo "Unziping fonts ..."
-    unzip DejaVuSansMono.zip -d ~/.local/share/fonts/DejaVuSansMono > /dev/null 2>&1
-    rm DejaVuSansMono.zip
-    echo "Running fc-cache -f -v ..."
-    fc-cache -f -v > /dev/null 2>&1
-  fi
-fi
-
 # ZSH
 
 ## installation
 sudo apt install zsh
-## install zsh
+## install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ## needs restart to apply as default term
 
@@ -93,7 +56,6 @@ ln -sn ${HOME}/dotfiles/tmux ${HOME}/.config/tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # DOCKER
-
 echo "Do you wish to install docker? (y/n)"
 read answer
 
@@ -105,3 +67,23 @@ if [ "$answer" == "y" ]; then
 else
     echo "Installation aborted."
 fi
+
+# Font
+echo "Do you wish to install fonts? (y/n)"
+read answer
+
+if [ "$answer" == "y" ]; then
+  if [ -d "${HOME}/.local/share/fonts/DejaVuSansMono" ]; then
+    echo "Font already installed."
+    exit 1
+  else
+    mkdir -p ${HOME}/.local/share/fonts/DejaVuSansMono
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/DejaVuSansMono.zip 
+    echo "Unziping fonts ..."
+    unzip DejaVuSansMono.zip -d ~/.local/share/fonts/DejaVuSansMono > /dev/null 2>&1
+    rm DejaVuSansMono.zip
+    echo "Running fc-cache -f -v ..."
+    fc-cache -f -v > /dev/null 2>&1
+  fi
+fi
+

@@ -62,7 +62,15 @@ lspconfig.html.setup {
 
 -- Css
 lspconfig.cssls.setup {
-  capabilities = capabilities
+  capabilities = capabilities,
+  settings = {
+    css = {
+      validate = true,
+      lint = {
+        unknownAtRules = "ignore"
+      }
+    }
+  }
 }
 
 -- Php

@@ -64,7 +64,7 @@ return require("packer").startup(function(use)
 
   -- Pairs/tags
   use("windwp/nvim-autopairs")
-  use({ "windwp/nvim-ts-autotag", requires = { "nvim-treesitter/nvim-treesitter" } })
+  use("windwp/nvim-ts-autotag")
   use("tpope/vim-surround")
 
   -- Comments
@@ -89,7 +89,6 @@ return require("packer").startup(function(use)
 
   -- Snippets
   use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp", dependencies = { "rafamadriz/friendly-snippets" } })
-  use("rafamadriz/friendly-snippets")
 
   --[[
   --    Navigation

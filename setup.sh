@@ -4,20 +4,18 @@
 sudo apt update
 sudo apt upgrade
 
-## nvim: gcc (treesitter), curl (npm), make & ripgrep (fzf), xclip (copy with C-c in vim).
+## nvim: gcc (treesitter), curl (npm), make & ripgrep (fzf), xclip (copy with C-c in vim), npm (mason)
 sudo apt install -y \
   gcc \
   curl \
   make \
   ripgrep \
   xclip \
+  npm
 
 ## utilities
 sudo apt install -y \
-  rimraf \
   fzf
-  #g++ \
-  #libstdc++-12-dev
 
 # NVIM
 
@@ -30,12 +28,7 @@ ln -sn ${HOME}/dotfiles/nvim ${HOME}/.config/nvim
 ### setup packer
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-## Then :so & :PackerSync twice in packer setup file.
-
-### install npm for Mason
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.1/install.sh | bash
-source ${HOME}/.nvm/nvm.sh
-nvm install node
+## Then :so & :PackerSync in packer setup file.
 
 # ZSH
 
@@ -78,11 +71,9 @@ if [ "$answer" == "y" ]; then
     exit 1
   else
     mkdir -p ${HOME}/.local/share/fonts/DejaVuSansMono
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/DejaVuSansMono.zip 
-    echo "Unziping fonts ..."
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/DejaVuSansMono.zip 
     unzip DejaVuSansMono.zip -d ~/.local/share/fonts/DejaVuSansMono > /dev/null 2>&1
     rm DejaVuSansMono.zip
-    echo "Running fc-cache -f -v ..."
     fc-cache -f -v > /dev/null 2>&1
   fi
 fi

@@ -1,7 +1,6 @@
 local status, lspconfig = pcall(require, 'lspconfig')
 if (not status) then return end
 local cmp_lsp = require('cmp_nvim_lsp')
-local typescript = require('typescript')
 
 -- Called when language server attach to buffer (on_attach)
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -35,8 +34,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local capabilities = cmp_lsp.default_capabilities()
 
 
--- Typescript withRemoved null-ls
-typescript.setup {
+-- Typescript
+lspconfig.ts_ls.setup {
   server = {
     capabilities = capabilities,
     on_attach = function(client)

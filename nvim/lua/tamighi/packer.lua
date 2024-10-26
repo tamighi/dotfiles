@@ -27,7 +27,6 @@ return require("packer").startup(function(use)
 
   -- LSP
   use("neovim/nvim-lspconfig")
-  use("jose-elias-alvarez/typescript.nvim")
 
   -- LSP servers
   use({ "williamboman/mason-lspconfig.nvim", require = { "williamboman/mason.nvim" } })

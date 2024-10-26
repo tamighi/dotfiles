@@ -6,7 +6,7 @@ mason.setup()
 
 masonlsp.setup({
   ensure_installed = {
-    "tsserver",
+    "ts_ls",
     "html",
     "cssls",
     "lua_ls",

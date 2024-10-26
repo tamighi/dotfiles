@@ -14,3 +14,5 @@ conform.setup({
   },
   format_on_save = format_options
 })
+
+vim.keymap.set('n', '<leader>y', function() conform.format(format_options) end)

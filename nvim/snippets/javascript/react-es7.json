@@ -58,8 +58,6 @@
   "typescriptReactFunctionalExportComponent": {
     "prefix": "tsrfce",
     "body": [
-      "import React from 'react'",
-      "",
       "type Props = {}",
       "",
       "function ${1:${TM_FILENAME_BASE}}({}: Props) {",
@@ -469,20 +467,6 @@
       "export default ${1:${TM_FILENAME_BASE}}"
     ],
     "description": "Creates a React Memo Function Component with ES7 module system with PropTypes"
-  },
-  "reactFunctionalComponent": {
-    "prefix": "rfc",
-    "body": [
-      "import React from 'react'",
-      "",
-      "export default function ${1:${TM_FILENAME_BASE}}() {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
-      "}",
-      ""
-    ],
-    "description": "Creates a React Functional Component with ES7 module system"
   },
   "reactFunctionalComponentRedux": {
     "prefix": "rfcredux",

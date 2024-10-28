@@ -70,33 +70,16 @@
     ],
     "description": "Creates a React Functional Component with ES7 module system and TypeScript interface"
   },
-  "typescriptReactFunctionalComponent": {
+  "typescriptReactArrowFunctionExportComponent": {
     "prefix": "tsrfc",
     "body": [
-      "import React from 'react'",
-      "",
       "type Props = {}",
       "",
-      "export default function ${1:${TM_FILENAME_BASE}}({}: Props) {",
+      "export const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",
       "}"
-    ],
-    "description": "Creates a React Functional Component with ES7 module system and TypeScript interface"
-  },
-  "typescriptReactArrowFunctionExportComponent": {
-    "prefix": "tsrafce",
-    "body": [
-      "type Props = {}",
-      "",
-      "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}"
     ],
     "description": "Creates a React Arrow Function Component with ES7 module system and TypeScript interface"
   },

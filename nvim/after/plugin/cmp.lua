@@ -11,6 +11,7 @@ vim.opt.completeopt = { "noselect", "menu", "menuone" }
 cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
     { name = 'luasnip' },
     { name = 'path' },
     { name = 'buffer' },
@@ -54,7 +55,6 @@ cmp.setup({
 cmp.setup.filetype({ 'typescriptreact', 'typescript' }, {
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'nvim_lua' },
     { name = 'luasnip' },
     { name = 'buffer',  keyword_length = 3 },
   }

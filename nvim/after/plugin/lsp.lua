@@ -37,10 +37,7 @@ local capabilities = cmp_lsp.default_capabilities()
 -- Typescript
 lspconfig.ts_ls.setup {
   server = {
-    capabilities = capabilities,
-    on_attach = function(client)
-      client.server_capabilities.document_formatting = false
-    end,
+    capabilities = capabilities
   }
 }
 

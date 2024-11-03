@@ -88,7 +88,7 @@
     "body": [
       "type Props = {}",
       "",
-      "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+      "export const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
       "  return (",
       "    <div>${1:first}</div>",
       "  )",

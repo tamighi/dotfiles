@@ -27,6 +27,7 @@ opt.smarttab = true
 -- search
 opt.hlsearch = true
 opt.incsearch = true
+opt.ignorecase = true
 opt.smartcase = true
 
 -- display preferences

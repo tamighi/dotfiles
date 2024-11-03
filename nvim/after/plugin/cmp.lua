@@ -5,8 +5,6 @@ if (not status) then return end
 local lspkind = require('lspkind')
 local luasnip = require('luasnip')
 
-vim.opt.completeopt = { "noselect", "menu", "menuone" }
-
 -- cmp
 cmp.setup({
   sources = cmp.config.sources({
@@ -20,7 +18,7 @@ cmp.setup({
   mapping = {
     ['<C-k>'] = cmp.mapping(cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Insert,
-      select = true
+      select = false
     }), { "i", "c" }),
 
     ["<C-Space>"] = cmp.mapping.complete(),
@@ -40,8 +38,13 @@ cmp.setup({
     })
   },
 
-  experimental = {
-    ghost_text = true,
+  completion = {
+    completeopt = 'menu,menuone,noinsert'
+  },
+
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
 
   snippet = {

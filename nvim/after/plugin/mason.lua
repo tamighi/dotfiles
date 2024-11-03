@@ -11,12 +11,7 @@ masonlsp.setup({
     "cssls",
     "lua_ls",
     "jsonls",
-    "pyright",
-    "dockerls",
     "tailwindcss",
-    "angularls",
     "clangd",
-    "intelephense",
-    "texlab"
   }
 })

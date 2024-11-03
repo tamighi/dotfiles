@@ -54,8 +54,8 @@ return require("packer").startup(function(use)
 
   -- Dap
   use({ "mfussenegger/nvim-dap", requires = { "wbthomason/packer.nvim" } })
+  use({ "rcarriga/nvim-dap-ui", requires = { "nvim-neotest/nvim-nio" } })
   use("theHamsta/nvim-dap-virtual-text")
-  use("jay-babu/mason-nvim-dap.nvim")
 
   --[[
   --    Mapping & other utilities

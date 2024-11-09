@@ -9,6 +9,7 @@ telescope.setup {}
 vim.keymap.set('n', '<leader>f', function()
   builtin.find_files({
     hidden = true,
+    file_ignore_patterns = { ".git/" }
   })
 end, {})
 

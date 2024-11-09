@@ -38,6 +38,10 @@ cmp.setup({
     })
   },
 
+  experimental = {
+    ghost_text = true
+  },
+
   completion = {
     completeopt = 'menu,menuone,noinsert'
   },
@@ -46,6 +50,8 @@ cmp.setup({
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
+
+
 
   snippet = {
     expand = function(args)

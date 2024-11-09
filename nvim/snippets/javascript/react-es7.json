@@ -641,19 +641,6 @@
       "import { ${2:second} as ${3:third} } from '${1:first}'"
     ]
   },
-  "importBrowserRouter": {
-    "prefix": "imbr",
-    "body": [
-      "import { BrowserRouter as Router } from 'react-router-dom'"
-    ]
-  },
-  "importBrowserRouterWithRouteAndNavLink": {
-    "prefix": "imrr",
-    "body": [
-      "import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'",
-      ""
-    ]
-  },
   "importDestructing": {
     "prefix": "imd",
     "body": [
@@ -672,88 +659,16 @@
       "import \"${1:first}\";"
     ]
   },
-  "importPropTypes": {
-    "prefix": "impt",
-    "body": [
-      "import PropTypes from 'prop-types'"
-    ]
-  },
   "importReact": {
     "prefix": "imr",
     "body": [
       "import React from 'react'"
     ]
   },
-  "importReactDom": {
-    "prefix": "imrd",
-    "body": [
-      "import ReactDOM from 'react-dom'"
-    ]
-  },
   "importReactWithComponent": {
     "prefix": "imrc",
     "body": [
       "import React, { Component } from 'react'"
-    ]
-  },
-  "importReactWithComponentAndPropTypes": {
-    "prefix": "imrcp",
-    "body": [
-      "import React, { Component } from 'react'",
-      "import PropTypes from 'prop-types'",
-      ""
-    ]
-  },
-  "importReactWithMemo": {
-    "prefix": "imrm",
-    "body": [
-      "import React, { memo } from 'react'"
-    ]
-  },
-  "importReactWithMemoAndPropTypes": {
-    "prefix": "imrmp",
-    "body": [
-      "import React, { memo } from 'react'",
-      "import PropTypes from 'prop-types'",
-      ""
-    ]
-  },
-  "importReactWithPureComponent": {
-    "prefix": "imrpc",
-    "body": [
-      "import React, { PureComponent } from 'react'"
-    ]
-  },
-  "importReactWithPureComponentAndPropTypes": {
-    "prefix": "imrpcp",
-    "body": [
-      "import React, { PureComponent } from 'react'",
-      "import PropTypes from 'prop-types'",
-      ""
-    ]
-  },
-  "importRouterLink": {
-    "prefix": "imbrl",
-    "body": [
-      "import { Link } from 'react-router-dom'"
-    ]
-  },
-  "importRouterNavLink": {
-    "prefix": "imbrnl",
-    "body": [
-      "import { NavLink } from 'react-router-dom'"
-    ]
-  },
-  "importRouterSetup": {
-    "prefix": "imbrc",
-    "body": [
-      "import { Route, Switch, NavLink, Link } from 'react-router-dom'"
-    ]
-  },
-  "importRouterSwitch": {
-    "prefix": "imbrs",
-    "body": [
-      "import { Switch } from 'react-router-dom'"
     ]
   },
   "import": {

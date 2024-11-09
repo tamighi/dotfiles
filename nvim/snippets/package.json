@@ -299,6 +299,7 @@
       {
         "language": [
           "javascriptreact",
+          "typescript",
           "typescriptreact"
         ],
         "path": "./javascript/react-es7.json"

@@ -21,7 +21,7 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 keymap.set("n", "<C-w>v", "<C-w>v<C-w>l")
 
 -- Fast quit
-keymap.set("n", "<C-c>", ":x<Cr>")
+keymap.set("n", "<C-c>", ":q<Cr>")
 
 -- Fast save
 keymap.set("n", "<C-s>", ":w<Cr>")
@@ -37,10 +37,10 @@ keymap.set("n", "][", "?}<CR>")
 keymap.set("n", "[]", "/}<CR>")
 
 -- Move to window using the <ctrl> hjkl keys
-keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
-keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
-keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
-keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+keymap.set("n", "<C-h>", "<C-w>h")
+keymap.set("n", "<C-j>", "<C-w>j")
+keymap.set("n", "<C-k>", "<C-w>k")
+keymap.set("n", "<C-l>", "<C-w>l")
 
 -- better indenting
 keymap.set("v", "<", "<gv")

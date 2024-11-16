@@ -6,7 +6,8 @@ oil.setup({
   skip_confirm_for_simple_edits = true,
   columns = { "icon" },
   keymaps = {
-    ["<C-h>"] = false
+    ["<C-h>"] = false,
+    ["<C-c>"] = false,
   },
   view_options = {
     show_hidden = true

@@ -1,6 +1,9 @@
 local status, lspconfig = pcall(require, 'lspconfig')
 if (not status) then return end
+local lspkind = require('lspkind')
 local cmp_lsp = require('cmp_nvim_lsp')
+
+lspkind.init()
 
 -- Called when language server attach to buffer (on_attach)
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -21,9 +24,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', ']d', vim.diagnostic.goto_prev)
     vim.keymap.set('n', '[d', vim.diagnostic.goto_next)
 
-    if client.name == "tsserver" then
-      vim.keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>")
-      vim.keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>")
+    if client.name == "ts_ls" then
+      vim.keymap.set("n", "<leader>oi", ":OrganizeImports<CR>")
     end
   end,
 })
@@ -35,9 +37,25 @@ local capabilities = cmp_lsp.default_capabilities()
 
 
 -- Typescript
+--
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = { vim.api.nvim_buf_get_name(0) },
+    title = ""
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
 lspconfig.ts_ls.setup {
   server = {
     capabilities = capabilities
+  },
+  commands = {
+    OrganizeImports = {
+      organize_imports,
+      description = "Organize Imports"
+    }
   }
 }
 

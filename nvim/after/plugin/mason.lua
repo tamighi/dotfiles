@@ -13,5 +13,6 @@ masonlsp.setup({
     "jsonls",
     "tailwindcss",
     "clangd",
+    "emmet_ls"
   }
 })

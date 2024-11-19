@@ -88,6 +88,7 @@ return require("packer").startup(function(use)
 
   -- Snippets
   use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp", dependencies = { "rafamadriz/friendly-snippets" } })
+  use("aca/emmet-ls")
 
   --[[
   --    Navigation

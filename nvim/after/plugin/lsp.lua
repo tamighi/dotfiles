@@ -129,3 +129,17 @@ lspconfig.lua_ls.setup {
 
 -- LaTex
 lspconfig.texlab.setup {}
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+lspconfig.emmet_ls.setup({
+  -- on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "css", "html", "typescriptreact" },
+  init_options = {
+    html = {
+      options = {
+        ["bem.enabled"] = true,
+      },
+    },
+  }
+})

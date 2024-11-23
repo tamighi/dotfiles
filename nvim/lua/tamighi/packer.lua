@@ -122,5 +122,6 @@ return require("packer").startup(function(use)
   --    Others
   --]]
 
-  use("tjdevries/vlog.nvim")
+  use("tjdevries/vlog.nvim") -- logs to debug
+  use("tpope/vim-abolish")   -- find and replace case sensitive
 end)

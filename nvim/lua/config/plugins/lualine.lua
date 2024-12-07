@@ -42,7 +42,6 @@ return {
 
     lualine.setup {
       options = {
-        theme = "solarized_dark",
         component_separators = "|",
         section_separators = "",
         globalstatus = true,

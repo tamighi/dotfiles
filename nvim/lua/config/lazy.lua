@@ -23,8 +23,8 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
   spec = {
     {
-      "oxfist/night-owl.nvim",
-      config = function() vim.cmd.colorscheme("night-owl") end
+      "EdenEast/nightfox.nvim",
+      config = function() vim.cmd.colorscheme("nightfox") end
     },
 
     { "tpope/vim-surround" },

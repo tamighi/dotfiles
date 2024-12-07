@@ -1,1 +1,1 @@
-require('tamighi')
+require("config.lazy")

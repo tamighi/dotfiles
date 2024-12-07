@@ -38,3 +38,6 @@ opt.iskeyword:append("-")
 
 -- split
 opt.splitright = true
+
+-- clipboard
+opt.clipboard = "unnamedplus"

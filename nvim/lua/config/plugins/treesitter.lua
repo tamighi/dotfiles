@@ -1,6 +1,8 @@
 return {
   "nvim-treesitter/nvim-treesitter",
 
+  build = ":TSUpdate",
+
   config = function()
     local treesitter = require("nvim-treesitter.configs")
 
@@ -20,8 +22,7 @@ return {
         "php",
       },
 
-      sync_install = false,
-      auto_install = true,
+      auto_install = false,
       highlight = {
         enable = true
       }

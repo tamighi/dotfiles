@@ -1,7 +1,13 @@
 return {
   "neovim/nvim-lspconfig",
 
+  dependencies = {
+    "hrsh7th/cmp-nvim-lsp"
+  },
+
   config = function()
+    local lspconfig = require 'lspconfig'
+
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
       callback = function(ev)
@@ -26,8 +32,6 @@ return {
       end,
     })
 
-    local lspconfig = require 'lspconfig'
-
     local function organize_imports()
       local params = {
         command = "_typescript.organizeImports",
@@ -43,10 +47,28 @@ return {
       }
     }
 
-    lspconfig.html.setup {}
-    lspconfig.cssls.setup {}
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+    lspconfig.html.setup {
+      capabilities = capabilities
+    }
+
+    lspconfig.cssls.setup {
+      settings = {
+        css = {
+          validate = true,
+          lint = {
+            unknownAtRules = "ignore"
+          }
+        }
+      }
+    }
+
     lspconfig.emmet_ls.setup {}
+
     lspconfig.jsonls.setup {}
+
     lspconfig.tailwindcss.setup {}
 
     lspconfig.clangd.setup {}

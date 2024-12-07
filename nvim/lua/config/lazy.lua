@@ -23,14 +23,15 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
   spec = {
     {
-      "folke/tokyonight.nvim",
-      config = function() vim.cmd.colorscheme("tokyonight") end
+      "oxfist/night-owl.nvim",
+      config = function() vim.cmd.colorscheme("night-owl") end
     },
 
     { "tpope/vim-surround" },
-    { 'windwp/nvim-autopairs' },
     { 'windwp/nvim-ts-autotag' },
     { 'nvim-tree/nvim-web-devicons' },
+    { "tpope/vim-abolish" }, -- find and replace case sensitive
+
 
     { import = "config.plugins" },
   },

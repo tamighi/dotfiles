@@ -2,7 +2,16 @@ return {
   "neovim/nvim-lspconfig",
 
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp"
+    "hrsh7th/cmp-nvim-lsp",
+    {
+      "folke/lazydev.nvim",
+      ft = "lua",
+      opts = {
+        library = {
+          { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+        },
+      },
+    },
   },
 
   config = function()
@@ -18,19 +27,19 @@ return {
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
         vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, opts)
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', '<leader>rr', vim.lsp.buf.references, opts)
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
 
-        vim.keymap.set('n', ']d', vim.diagnostic.goto_prev)
-        vim.keymap.set('n', '[d', vim.diagnostic.goto_next)
-
-        if client.name == "ts_ls" then
+        if client ~= nil and client.name == "ts_ls" then
           vim.keymap.set("n", "<leader>oi", ":OrganizeImports<CR>")
         end
       end,
     })
+
+    local cmp_lsp = require("cmp_nvim_lsp");
+    local capabilities = cmp_lsp.default_capabilities();
 
     local function organize_imports()
       local params = {
@@ -42,17 +51,14 @@ return {
     end
 
     lspconfig.ts_ls.setup {
+      capabilities = capabilities,
       commands = {
         OrganizeImports = { organize_imports }
       }
     }
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-    lspconfig.html.setup {
-      capabilities = capabilities
-    }
+    lspconfig.html.setup {}
 
     lspconfig.cssls.setup {
       settings = {
@@ -73,18 +79,6 @@ return {
 
     lspconfig.clangd.setup {}
 
-    lspconfig.lua_ls.setup {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { 'vim' }
-          }
-        },
-        workspace = {
-          library = vim.api.nvim_get_runtime_file("", true)
-        },
-      }
-
-    }
+    lspconfig.lua_ls.setup {}
   end
 }

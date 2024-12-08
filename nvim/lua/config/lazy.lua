@@ -27,11 +27,8 @@ require("lazy").setup({
       config = function() vim.cmd.colorscheme("nightfox") end
     },
 
-    { "tpope/vim-surround" },
-    { 'windwp/nvim-ts-autotag' },
     { 'nvim-tree/nvim-web-devicons' },
     { "tpope/vim-abolish" }, -- find and replace case sensitive
-
 
     { import = "config.plugins" },
   },

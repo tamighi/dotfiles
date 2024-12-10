@@ -11,9 +11,6 @@ keymap.set("n", "N", "Nzzzv")
 -- No yank for x
 keymap.set("n", "x", '"_x')
 
--- Copy to clipboard
-keymap.set("v", "<C-c>", "\"+y")
-
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
@@ -32,9 +29,6 @@ keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clea
 -- Section jump
 keymap.set("n", "[[", "?{<CR>")
 keymap.set("n", "]]", "/{<CR>")
-
-keymap.set("n", "][", "?}<CR>")
-keymap.set("n", "[]", "/}<CR>")
 
 -- better indenting
 keymap.set("v", "<", "<gv")

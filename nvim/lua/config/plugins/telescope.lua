@@ -3,6 +3,7 @@ return {
 
   dependencies = {
     'nvim-lua/plenary.nvim',
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
   },
 
   config = function()
@@ -21,16 +22,22 @@ return {
               ["<Enter>"] = "file_vsplit"
             }
           }
+        },
+        extensions = {
+          fzf = {}
         }
       }
     }
 
-    vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+    vim.keymap.set('n', '<leader>fd', builtin.find_files, {})
+    vim.keymap.set('n', '<leader>fw', builtin.live_grep, {})
+    vim.keymap.set("n", "<leader>fk", builtin.keymaps, {})
+    vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+    vim.keymap.set('n', '<leader>fp', builtin.resume, {})
 
-    vim.keymap.set('n', '<leader>w', builtin.live_grep, {})
-    vim.keymap.set("n", "<leader>k", builtin.keymaps, {})
-
-    vim.keymap.set('n', '<leader>h', builtin.help_tags, {})
-    vim.keymap.set('n', '<leader>p', builtin.resume, {})
+    vim.keymap.set('n', '<leader>en',
+      function()
+        builtin.find_files { cwd = vim.fn.stdpath("config") }
+      end, {})
   end
 }

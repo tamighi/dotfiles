@@ -9,6 +9,8 @@ return {
 
   config = function()
     local harpoon = require("harpoon")
+
+    ---@diagnostic disable-next-line: missing-fields
     harpoon.setup({
       settings = {
         save_on_toggle = true,

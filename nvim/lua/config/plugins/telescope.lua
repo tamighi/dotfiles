@@ -17,13 +17,6 @@ return {
           hidden = true,
           file_ignore_patterns = { ".git/" }
         },
-        help_tags = {
-          mappings = {
-            i = {
-              ["<Enter>"] = "file_vsplit"
-            }
-          }
-        },
         extensions = {
           fzf = {}
         }

@@ -39,10 +39,6 @@ return {
         format = lspkind.cmp_format()
       },
 
-      experimental = {
-        ghost_text = true
-      },
-
       completion = {
         completeopt = 'menu,menuone,noinsert'
       },
@@ -51,8 +47,6 @@ return {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       },
-
-
 
       snippet = {
         expand = function(args)

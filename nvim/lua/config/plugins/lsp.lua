@@ -26,7 +26,7 @@ return {
         -- Keymaps
         vim.keymap.set('n', 'grr', vim.lsp.buf.references, opts)
         vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, opts)
-        vim.keymap.set('n', 'gca', vim.lsp.buf.code_action, opts)
+        vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', 'grn', vim.lsp.buf.rename, opts)
 
         if client ~= nil and client.name == "ts_ls" then

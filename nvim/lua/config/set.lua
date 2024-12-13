@@ -9,10 +9,7 @@ opt.swapfile = false
 opt.backup = false
 
 -- ui
-opt.title = true
-opt.termguicolors = true
 opt.cursorline = true
-opt.colorcolumn = "80"
 
 -- space tabs
 opt.tabstop = 2
@@ -38,6 +35,3 @@ opt.iskeyword:append("-")
 
 -- split
 opt.splitright = true
-
--- clipboard
-opt.clipboard = "unnamedplus"

@@ -1,16 +1,5 @@
 local keymap = vim.keymap
 
--- Window centered when scroll
-keymap.set("n", "<C-d>", "<C-d>zz")
-keymap.set("n", "<C-u>", "<C-u>zz")
-
--- Reposition window on go to next
-keymap.set("n", "n", "nzzzv")
-keymap.set("n", "N", "Nzzzv")
-
--- No yank for x
-keymap.set("n", "x", '"_x')
-
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
@@ -29,7 +18,3 @@ keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clea
 -- Section jump
 keymap.set("n", "[[", "?{<CR>")
 keymap.set("n", "]]", "/{<CR>")
-
--- better indenting
-keymap.set("v", "<", "<gv")
-keymap.set("v", ">", ">gv")

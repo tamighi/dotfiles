@@ -18,8 +18,7 @@ return {
         "lua_ls",
         "jsonls",
         "tailwindcss",
-        "clangd",
-        "emmet_ls"
+        "clangd"
       }
     }
   end

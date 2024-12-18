@@ -302,5 +302,9 @@
   "console.log": {
     "prefix": "cl",
     "body": "console.log(${0})"
+  },
+  "module export const": {
+    "prefix": "ec",
+    "body": "export const ${1:member} = ${2:value}"
   }
 }

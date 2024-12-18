@@ -6,6 +6,7 @@ return {
   config = function()
     local treesitter = require("nvim-treesitter.configs")
 
+    ---@diagnostic disable-next-line: missing-fields
     treesitter.setup {
       ensure_installed = {
         "markdown",
@@ -20,6 +21,7 @@ return {
         "bash",
         "json",
         "php",
+        "glsl"
       },
 
       auto_install = false,
@@ -27,5 +29,7 @@ return {
         enable = true
       }
     }
+
+    vim.treesitter.language.register('glsl', { 'vert', 'frag' })
   end
 }

@@ -214,24 +214,6 @@
     ],
     "description": "Creates a React Arrow Function Component with ES7 module system"
   },
-  "reactArrowFunctionComponentWithPropTypes": {
-    "prefix": "rafcp",
-    "body": [
-      "import React from 'react'",
-      "import PropTypes from 'prop-types'",
-      "",
-      "const ${1:${TM_FILENAME_BASE}} = props => {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
-      "}",
-      "",
-      "${1:${TM_FILENAME_BASE}}.propTypes = {}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}"
-    ],
-    "description": "Creates a React Arrow Function Component with ES7 module system with PropTypes"
-  },
   "reactArrowFunctionExportComponent": {
     "prefix": "rafce",
     "body": [
@@ -398,122 +380,6 @@
       ""
     ],
     "description": "Creates a React pure component class with ES7 module system"
-  },
-  "reactClassPureComponentWithPropTypes": {
-    "prefix": "rpcp",
-    "body": [
-      "import PropTypes from 'prop-types'",
-      "import React, { PureComponent } from 'react'",
-      "",
-      "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
-      "  static propTypes = {}",
-      "",
-      "  render() {",
-      "    return (",
-      "      <div>${1:first}</div>",
-      "    )",
-      "  }",
-      "}",
-      ""
-    ],
-    "description": "Creates a React component class with ES7 module system"
-  },
-  "reactFunctionMemoComponent": {
-    "prefix": "rmc",
-    "body": [
-      "import React, { memo } from 'react'",
-      "",
-      "const ${1:${TM_FILENAME_BASE}} = memo(() => {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
-      "})",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}"
-    ],
-    "description": "Creates a React Memo Function Component with ES7 module system"
-  },
-  "reactFunctionMemoComponentWithPropTypes": {
-    "prefix": "rmcp",
-    "body": [
-      "import PropTypes from 'prop-types'",
-      "import React, { memo } from 'react'",
-      "",
-      "const ${1:${TM_FILENAME_BASE}} = memo((props) => {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
-      "})",
-      "",
-      "${1:${TM_FILENAME_BASE}}.propTypes = {}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}"
-    ],
-    "description": "Creates a React Memo Function Component with ES7 module system with PropTypes"
-  },
-  "reactFunctionalComponentRedux": {
-    "prefix": "rfcredux",
-    "body": [
-      "import React from 'react'",
-      "import { connect } from 'react-redux'",
-      "",
-      "export const ${1:${TM_FILENAME_BASE}} = (props) => {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
-      "}",
-      "",
-      "const mapStateToProps = (state) => ({})",
-      "",
-      "const mapDispatchToProps = {}",
-      "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
-    ],
-    "description": "Creates a React functional component with connected redux and ES7 module system"
-  },
-  "reactFunctionalComponentReduxPropTypes": {
-    "prefix": "rfcreduxp",
-    "body": [
-      "import PropTypes from 'prop-types'",
-      "import React from 'react'",
-      "import { connect } from 'react-redux'",
-      "",
-      "export const ${1:${TM_FILENAME_BASE}} = (props) => {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
-      "}",
-      "",
-      "${1:${TM_FILENAME_BASE}}.propTypes = {",
-      "  ${2:second}: PropTypes.${3:third}",
-      "}",
-      "",
-      "const mapStateToProps = (state) => ({})",
-      "",
-      "const mapDispatchToProps = {}",
-      "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
-    ],
-    "description": "DEPRECATED: Creates a React functional component with PropTypes with connected redux and ES7 module system"
-  },
-  "reactFunctionalComponentWithPropTypes": {
-    "prefix": "rfcp",
-    "body": [
-      "import React from 'react'",
-      "import PropTypes from 'prop-types'",
-      "",
-      "function ${1:${TM_FILENAME_BASE}}(props) {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
-      "}",
-      "",
-      "${1:${TM_FILENAME_BASE}}.propTypes = {}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}",
-      ""
-    ],
-    "description": "Creates a React Functional Component with ES7 module system with PropTypes"
   },
   "reactFunctionalExportComponent": {
     "prefix": "rfce",
@@ -1035,12 +901,6 @@
     "prefix": "exd",
     "body": [
       "export { ${2:second} } from '${1:first}'"
-    ]
-  },
-  "exportAs": {
-    "prefix": "exa",
-    "body": [
-      "export { ${2:second} as ${3:third} } from '${1:first}'"
     ]
   },
   "exportNamedFunction": {

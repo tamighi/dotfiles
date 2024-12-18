@@ -24,7 +24,9 @@ return {
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
 
         -- Keymaps
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
         vim.keymap.set('n', 'grr', vim.lsp.buf.references, opts)
+        vim.keymap.set('n', 'gof', vim.diagnostic.open_float, opts)
         vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, opts)
         vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', 'grn', vim.lsp.buf.rename, opts)
@@ -68,16 +70,6 @@ return {
       }
     }
 
-    lspconfig.emmet_ls.setup {
-      init_options = {
-        html = {
-          options = {
-            ["output.compactBoolean"] = true,
-          },
-        },
-      }
-    }
-
     lspconfig.jsonls.setup {}
 
     lspconfig.tailwindcss.setup {}
@@ -85,5 +77,7 @@ return {
     lspconfig.clangd.setup {}
 
     lspconfig.lua_ls.setup {}
+
+    lspconfig.glsl_analyzer.setup {}
   end
 }

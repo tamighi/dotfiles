@@ -35,3 +35,12 @@ opt.iskeyword:append("-")
 
 -- split
 opt.splitright = true
+
+opt.clipboard = "unnamedplus"
+
+vim.filetype.add {
+  extension = {
+    vert = "vert",
+    frag = "frag",
+  },
+}

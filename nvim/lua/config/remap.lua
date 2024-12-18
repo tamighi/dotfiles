@@ -18,3 +18,7 @@ keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clea
 -- Section jump
 keymap.set("n", "[[", "?{<CR>")
 keymap.set("n", "]]", "/{<CR>")
+
+-- VeryQuick fix
+keymap.set("n", "<M-n>", "<cmd>cn<cr>");
+keymap.set("n", "<M-p>", "<cmd>cp<cr>");

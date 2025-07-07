@@ -572,6 +572,32 @@
     ],
     "description": "polygon shape"
   },
+  "frag": {
+    "prefix": "frag",
+    "body": [
+      "precision mediump float;",
+      "",
+      "void main() {",
+      "\tgl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);",
+      "}"
+    ],
+    "description": "Three vertext shader"
+  },
+  "vert": {
+    "prefix": "vert",
+    "body": [
+      "uniform mat4 projectionMatrix;",
+      "uniform mat4 viewMatrix;",
+      "uniform mat4 modelMatrix;",
+      "",
+      "attribute vec3 position;",
+      "",
+      "void main() {",
+      "\tgl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);",
+      "}"
+    ],
+    "description": "Three vertext shader"
+  },
   "scale": {
     "prefix": "scale",
     "body": [

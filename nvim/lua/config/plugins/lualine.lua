@@ -16,7 +16,7 @@ return {
         else
           file_name = vim.fn.fnamemodify(file_path, ':t')
         end
-        local dev = devicons.get_icon(file_name) or ''
+        local dev = devicons.get_icon(file_name) or devicons.get_default_icon().icon
 
         local current_file_path = vim.fn.expand("%:f")
 

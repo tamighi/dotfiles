@@ -504,37 +504,25 @@
   "importAs": {
     "prefix": "ima",
     "body": [
-      "import { ${2:second} as ${3:third} } from '${1:first}'"
+      "import { ${2:second} as ${3:third} } from \"${1:first}\";"
     ]
   },
   "importDestructing": {
     "prefix": "imd",
     "body": [
-      "import { ${2:second} } from '${1:first}'"
+      "import { ${2:second} } from \"${1:first}\";"
     ]
   },
   "importEverything": {
     "prefix": "ime",
     "body": [
-      "import * as ${2:second} from '${1:first}'"
+      "import * as ${2:second} from \"${1:first}\";"
     ]
   },
   "importNoModuleName": {
     "prefix": "imn",
     "body": [
       "import \"${1:first}\";"
-    ]
-  },
-  "importReact": {
-    "prefix": "imr",
-    "body": [
-      "import React from 'react'"
-    ]
-  },
-  "importReactWithComponent": {
-    "prefix": "imrc",
-    "body": [
-      "import React, { Component } from 'react'"
     ]
   },
   "import": {

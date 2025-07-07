@@ -80,7 +80,11 @@
         "path": "./fortran.json"
       },
       {
-        "language": "glsl",
+        "language": [
+          "glsl",
+          "vert",
+          "frag"
+        ],
         "path": "./glsl.json"
       },
       {

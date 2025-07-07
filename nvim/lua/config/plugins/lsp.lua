@@ -60,6 +60,7 @@ return {
     lspconfig.html.setup {}
 
     lspconfig.cssls.setup {
+      capabilities = capabilities,
       settings = {
         css = {
           validate = true,
@@ -72,11 +73,11 @@ return {
 
     lspconfig.jsonls.setup {}
 
-    lspconfig.tailwindcss.setup {}
-
     lspconfig.clangd.setup {}
 
     lspconfig.lua_ls.setup {}
+
+    lspconfig.tailwindcss.setup {}
 
     lspconfig.glsl_analyzer.setup {}
   end

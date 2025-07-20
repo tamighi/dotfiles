@@ -1,6 +1,19 @@
 return {
   "neovim/nvim-lspconfig",
 
+  opts = {
+    servers = {
+      ts_ls = {
+        init_options = {
+          preferences = {
+            importModuleSpecifierPreference = "relative",
+            -- other settings
+          },
+        },
+      },
+    },
+  },
+
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     {
@@ -23,6 +36,8 @@ return {
         local opts = { buffer = ev.buf }
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
 
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true, silent = true })
+
         -- Keymaps
         vim.keymap.set('n', '[d', function()
           -- vim.diagnostic.jump({ count = 1, on_jump = vim.diagnostic.open_float })
@@ -33,6 +48,7 @@ return {
         vim.keymap.set('n', ']d', function()
           -- vim.diagnostic.jump({ count = -1, on_jump = vim.diagnostic.open_float })
           vim.diagnostic.goto_prev()
+          vim.diagnostic.open_float()
         end, { noremap = true, silent = true })
 
         if client ~= nil and client.name == "ts_ls" then

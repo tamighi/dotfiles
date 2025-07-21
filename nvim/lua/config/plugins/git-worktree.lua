@@ -20,12 +20,19 @@ return {
     local update_on_switch = Hooks.builtins.update_current_buffer_on_switch;
 
     Hooks.register(Hooks.type.SWITCH, function(path, prev_path)
-      vim.notify("Moved from " .. prev_path .. " to " .. path);
       update_on_switch(path, prev_path);
     end)
 
     Hooks.register(Hooks.type.DELETE, function()
       vim.cmd(config.update_on_change_command);
+    end)
+
+    Hooks.register(Hooks.type.SWITCH, function(path, prev_path)
+      if vim.fn.expand("%"):find("^oil:///") then
+        require("oil").open(vim.fn.getcwd())
+      else
+        Hooks.builtins.update_current_buffer_on_switch(path, prev_path)
+      end
     end)
   end
 }

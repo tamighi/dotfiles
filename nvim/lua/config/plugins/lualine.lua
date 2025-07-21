@@ -5,7 +5,22 @@ return {
     local harpoon = require('harpoon')
     local devicons = require('nvim-web-devicons')
 
-    function Harpoon_files()
+    local function BranchWithWorktree()
+      local icon = require("nvim-web-devicons").get_icon("branch") or ""
+      local res, match = vim.fn.FugitiveGitDir():gsub(".*worktrees/", "")
+      if match == 1 then
+        return icon .. " " .. res
+      else
+        local branch = vim.fn.FugitiveHead()
+        if branch ~= "" then
+          return icon .. " " .. branch
+        else
+          return ""
+        end
+      end
+    end
+
+    local function Harpoon_files()
       local contents = {}
 
       for idx = 1, harpoon:list():length() do
@@ -49,7 +64,7 @@ return {
       sections = {
         lualine_a = { "mode" },
         lualine_b = { { Harpoon_files } },
-        lualine_c = { "filename", "branch", "diff", "diagnostics" },
+        lualine_c = { "filename", BranchWithWorktree, "diff", "diagnostics" },
       },
     }
   end

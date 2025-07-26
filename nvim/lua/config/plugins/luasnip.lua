@@ -3,6 +3,7 @@ return {
 
   config = function()
     local luasnip = require('luasnip')
+    local loader = require('luasnip.loaders')
 
     vim.keymap.set({ "i", "s" }, "<C-l>", function()
       if luasnip.jumpable(1) then
@@ -15,6 +16,8 @@ return {
         luasnip.jump(-1)
       end
     end, { silent = true })
+
+    vim.keymap.set("n", "<leader>es", loader.edit_snippet_files, { silent = true })
 
     require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/snippets" } })
   end

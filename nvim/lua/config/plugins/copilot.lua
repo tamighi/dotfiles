@@ -8,15 +8,14 @@ return {
     copilot.setup({
       suggestion = {
         enabled = true,
-        keymap = {
-          accept = "<M-k>",
-          next = "<M-l>",
-          prev = "<M-j>"
-        }
       }
     });
 
-    vim.keymap.set("i", "<M-k>", suggestion.accept);
+    vim.keymap.set("i", "<M-k>", function()
+      suggestion.accept()
+      suggestion.next()
+    end, { desc = "[copilot] accept and next suggestion" })
+
     vim.keymap.set("i", "<M-l>", suggestion.next);
     vim.keymap.set("i", "<M-j>", suggestion.prev);
   end

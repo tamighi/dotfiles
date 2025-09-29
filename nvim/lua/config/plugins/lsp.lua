@@ -7,7 +7,6 @@ return {
 				init_options = {
 					preferences = {
 						importModuleSpecifierPreference = "relative",
-						-- other settings
 					},
 				},
 			},
@@ -28,8 +27,6 @@ return {
 	},
 
 	config = function()
-		local lspconfig = require("lspconfig")
-
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
@@ -39,25 +36,20 @@ return {
 
 				-- Keymaps
 				vim.keymap.set("n", "[d", function()
-					-- vim.diagnostic.jump({ count = 1, on_jump = vim.diagnostic.open_float })
-					vim.diagnostic.goto_next()
-					vim.diagnostic.open_float()
+					vim.diagnostic.jump({ count = 1, float = true })
 				end, { noremap = true, silent = true })
 
 				vim.keymap.set("n", "]d", function()
-					-- vim.diagnostic.jump({ count = -1, on_jump = vim.diagnostic.open_float })
-					vim.diagnostic.goto_prev()
-					vim.diagnostic.open_float()
+					vim.diagnostic.jump({ count = -1, float = true })
 				end, { noremap = true, silent = true })
+
+				vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist)
 
 				if client ~= nil and client.name == "ts_ls" then
 					vim.keymap.set("n", "<leader>oi", ":OrganizeImports<CR>")
 				end
 			end,
 		})
-
-		local cmp_lsp = require("cmp_nvim_lsp")
-		local capabilities = cmp_lsp.default_capabilities()
 
 		local function organize_imports()
 			local params = {
@@ -69,36 +61,17 @@ return {
 			clients[1]:exec_cmd(params)
 		end
 
-		vim.lsp.config("ts_ls", {
-			capabilities = capabilities,
-			commands = {
-				OrganizeImports = { organize_imports },
-			},
-		})
+		vim.api.nvim_create_user_command("OrganizeImports", function()
+			organize_imports()
+		end, {})
 
-		-- replace lspconfig.x.setup with vim.lsp.config
+		vim.lsp.config("ts_ls", {})
 		vim.lsp.config("html", {})
-
-		vim.lsp.config("cssls", {
-			capabilities = capabilities,
-			settings = {
-				css = {
-					validate = true,
-					lint = {
-						unknownAtRules = "ignore",
-					},
-				},
-			},
-		})
-
+		vim.lsp.config("cssls", {})
 		vim.lsp.config("jsonls", {})
-
 		vim.lsp.config("clangd", {})
-
 		vim.lsp.config("lua_ls", {})
-
 		vim.lsp.config("tailwindcss", {})
-
 		vim.lsp.config("glsl_analyzer", {})
 	end,
 }

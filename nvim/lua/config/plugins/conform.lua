@@ -1,20 +1,21 @@
 return {
-  "stevearc/conform.nvim",
+	"stevearc/conform.nvim",
 
-  config = function()
-    local conform = require 'conform'
-    local format_options = {
-      lsp_fallback = true,
-      async = false
-    }
+	config = function()
+		local conform = require("conform")
+		local format_options = {
+			lsp_fallback = true,
+			async = false,
+			timeout_ms = 2000,
+		}
 
-    conform.setup({
-      formatters_by_ft = {
-        lua = { "stylua" },
-        typescript = { "prettier" },
-        typescriptreact = { "prettier" },
-      },
-      format_on_save = format_options
-    })
-  end
+		conform.setup({
+			formatters_by_ft = {
+				lua = { "stylua" },
+				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
+			},
+			format_on_save = format_options,
+		})
+	end,
 }

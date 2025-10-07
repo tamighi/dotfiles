@@ -67,7 +67,7 @@ return {
 
 		vim.lsp.config("ts_ls", {})
 		vim.lsp.config("html", {})
-		vim.lsp.config("cssls", {})
+		vim.lsp.config("cssls", { settings = { css = { lint = { unknownAtRules = "ignore" } } } })
 		vim.lsp.config("jsonls", {})
 		vim.lsp.config("clangd", {})
 		vim.lsp.config("lua_ls", {})

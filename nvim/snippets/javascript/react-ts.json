@@ -76,11 +76,11 @@
   "useCallback": {
     "prefix": "ucb",
     "body": [
-      "const ${1:memoizedCallback} = React.useCallback(",
+      "const ${1:callback} = React.useCallback(",
       "\t() => {",
-      "\t\t${2:doSomething}(${3:a}, ${4:b})",
+      "\t\t${2}",
       "\t},",
-      "\t[${5:a}, ${6:b}],",
+      "\t[$3],",
       ")$0"
     ],
     "description": "React useCallback() hook"

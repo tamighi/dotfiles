@@ -62,7 +62,7 @@
       "",
       "const ${1:${TM_FILENAME_BASE}} = ({}: Props) => {",
       "  return (",
-      "    <div>${2:first}</div>",
+      "    <div>${2:${TM_FILENAME_BASE}}</div>",
       "  )",
       "}",
       "",
@@ -234,7 +234,7 @@
     "body": [
       "const ${1:${TM_FILENAME_BASE}} = () => {",
       "  return (",
-      "    <div>${2:first}</div>",
+      "    <div>${2:${TM_FILENAME_BASE}}</div>",
       "  )",
       "}",
       "",

@@ -59,7 +59,7 @@ sudo apt install docker-ce
 
 ```sh
 mkdir -p ${HOME}/.local/share/fonts/DejaVuSansMono
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/DejaVuSansMono.zip 
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/DejaVuSansMono.zip 
 unzip DejaVuSansMono.zip -d ~/.local/share/fonts/DejaVuSansMono > /dev/null 2>&1
 rm DejaVuSansMono.zip
 fc-cache -f -v > /dev/null 2>&1

@@ -1,35 +1,35 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
+	"nvim-treesitter/nvim-treesitter",
 
-  build = ":TSUpdate",
+	build = ":TSUpdate",
 
-  config = function()
-    local treesitter = require("nvim-treesitter.configs")
+	config = function()
+		local treesitter = require("nvim-treesitter.configs")
 
-    ---@diagnostic disable-next-line: missing-fields
-    treesitter.setup {
-      ensure_installed = {
-        "markdown",
-        "markdown_inline",
-        "vim",
-        "javascript",
-        "typescript",
-        "c",
-        "cpp",
-        "lua",
-        "dockerfile",
-        "bash",
-        "json",
-        "php",
-        "glsl"
-      },
+		treesitter.setup({
+			ensure_installed = {
+				"markdown",
+				"markdown_inline",
+				"vim",
+				"javascript",
+				"typescript",
+				"tsx",
+				"c",
+				"cpp",
+				"lua",
+				"dockerfile",
+				"bash",
+				"json",
+				"php",
+				"glsl",
+			},
 
-      auto_install = false,
-      highlight = {
-        enable = true
-      }
-    }
+			auto_install = false,
+			highlight = {
+				enable = true,
+			},
+		})
 
-    vim.treesitter.language.register('glsl', { 'vert', 'frag' })
-  end
+		vim.treesitter.language.register("glsl", { "vert", "frag" })
+	end,
 }

@@ -1,10 +1,10 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-
+	lazy = false,
 	build = ":TSUpdate",
 
 	config = function()
-		local treesitter = require("nvim-treesitter.configs")
+		local treesitter = require("nvim-treesitter")
 
 		treesitter.setup({
 			ensure_installed = {
@@ -31,5 +31,11 @@ return {
 		})
 
 		vim.treesitter.language.register("glsl", { "vert", "frag" })
+
+		vim.api.nvim_create_autocmd("FileType", {
+			callback = function()
+				pcall(vim.treesitter.start)
+			end,
+		})
 	end,
 }

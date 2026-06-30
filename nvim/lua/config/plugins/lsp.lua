@@ -71,7 +71,13 @@ return {
 		vim.lsp.config("jsonls", {})
 		vim.lsp.config("clangd", {})
 		vim.lsp.config("lua_ls", {})
-		vim.lsp.config("tailwindcss", {})
+		vim.lsp.config("tailwindcss", {
+			settings = {
+				tailwindCSS = {
+					colorDecorators = false,
+				},
+			},
+		})
 		vim.lsp.config("glsl_analyzer", {})
 	end,
 }
